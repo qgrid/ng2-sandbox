@@ -14,10 +14,12 @@ import { AppComponent } from './app.component';
 import { GridModule } from 'ng2-qgrid';
 import { DataService } from './data/data.service';
 import { QGridModule } from './q-grid/grid.module';
+import { ModelListComponent } from './model-list/model-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ModelListComponent
   ],
   imports: [
     BrowserModule,
