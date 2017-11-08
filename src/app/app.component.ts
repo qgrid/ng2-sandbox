@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ViewChild } from '@angular/core';
+import {GridModel, GridService} from 'ng2-qgrid';
 
 @Component({
   selector: 'app-root',
