@@ -35,7 +35,7 @@
     "@angular/language-service": "^4.4.6",
     "@types/jasmine": "~2.6.2",
     "@types/jasminewd2": "~2.0.3",
-    "@types/node": "~8.0.47",
+    "@types/node": "^8.0.49",
     "angular2-fontawesome": "^0.9.3",
     "codelyzer": "~3.2.2",
     "font-awesome": "^4.7.0",

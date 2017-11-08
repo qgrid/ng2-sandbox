@@ -1,1 +1,35 @@
-<grid></grid>
+<div class="main" screen-checker>
+
+  <md-sidenav-container>
+    <md-sidenav #sidenav mode="side" opened="false">
+      <div class="side-nav">
+        <div class="scrolling-content">
+
+        </div>
+      </div>
+    </md-sidenav>
+
+    <md-drawer-container>
+      <div class="main-content">
+        <md-toolbar class="toolbar">
+          <button md-button #navButton (click)="sidenav.toggle()" class="nav-button">
+            <md-icon class="nav-icon">menu</md-icon>
+          </button>
+          <span class="nav-label">
+        <a href="./#!/home">QGRID2</a>
+      </span>
+        </md-toolbar>
+
+        <div class="page-details">
+          <md-card class="page-details-example" style="height: 86vh">
+            <grid></grid>
+          </md-card>
+        </div>
+      </div>
+    </md-drawer-container>
+  </md-sidenav-container>
+
+</div>
+
+
+

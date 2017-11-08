@@ -1,0 +1,71 @@
+.side-nav {
+  background-color: rgb(63,81,181);
+  width: 200px;
+  height: 100vh;
+}
+
+.scrolling-content {
+  background-color: white;
+}
+
+.toolbar {
+  background-color: rgb(63,81,181);
+  height: 20%;
+}
+
+.nav-button {
+  min-width: 15px;
+  background-color: rgb(63,81,181);
+  border-radius: 6px;
+}
+
+.nav-label {
+  color: rgba(255, 255, 255, 0.87);
+  margin-left: 20px;
+}
+
+a, a:visited {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+}
+
+.body {
+  height: 800px;
+}
+
+.main {
+  background-color: rgb(250,250,250);
+}
+
+.card {
+
+  height: 90%;
+}
+
+.page-details {
+  padding: 10px;
+}
+
+.page-details-example {
+  background-color: white;
+  height: 97%;
+}
+
+.md-card {
+  height: 97%;
+}
+
+.mat-button {
+  border-radius: 7px;
+}
+
+.nav-icon {
+  color: rgba(255, 255, 255, 0.87);
+}
+
+@media (min-width:960px){
+  .toolbar {
+    display: none;
+  }
+}
+
