@@ -1,3 +1,4 @@
 <sb-model-button *ngFor="let model of list">
-  <span>{{model.constructor.name}}</span>
+  <span class="expansion-head">{{model.constructor.name | editConstructor | uppercase}}</span>
+  <span class="expansion-body">{{model | viewProperties}}</span>
 </sb-model-button>
