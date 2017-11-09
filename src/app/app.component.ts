@@ -18,7 +18,7 @@ export class AppComponent implements AfterViewInit {
   };
 
   initResizeListener() {
-    let eventHandler = _ => {
+    const eventHandler = _ => {
       this.screenWatcher();
     };
 
