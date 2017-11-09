@@ -1,6 +1,8 @@
 import {AfterViewInit, Component, ViewChild } from '@angular/core';
 import {GridModel, GridService} from 'ng2-qgrid';
 
+const MEDIUM_WIDTH = 960;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,7 +28,7 @@ export class AppComponent implements AfterViewInit {
   };
 
   screenWatcher() {
-    if (window.innerWidth > 960) {
+    if (window.innerWidth > MEDIUM_WIDTH) {
       this.sider.mode = 'side';
       this.sider.open();
       this.navButton.opened = true;
