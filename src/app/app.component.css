@@ -5,7 +5,8 @@
 }
 
 .scrolling-content {
-  background-color: white;
+  background-color: rgb(63,81,181);
+  padding-top: 55%;
 }
 
 .toolbar {

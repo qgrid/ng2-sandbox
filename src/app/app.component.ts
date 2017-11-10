@@ -1,5 +1,7 @@
 import {AfterViewInit, Component, ViewChild } from '@angular/core';
 
+const MEDIUM_WIDTH = 960;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,7 +19,7 @@ export class AppComponent implements AfterViewInit {
   };
 
   initResizeListener() {
-    let eventHandler = _ => {
+    const eventHandler = _ => {
       this.screenWatcher();
     };
 
@@ -25,7 +27,7 @@ export class AppComponent implements AfterViewInit {
   };
 
   screenWatcher() {
-    if (window.innerWidth > 960) {
+    if (window.innerWidth > MEDIUM_WIDTH) {
       this.sider.mode = 'side';
       this.sider.open();
       this.navButton.opened = true;
@@ -36,9 +38,4 @@ export class AppComponent implements AfterViewInit {
     }
     console.log(window.innerWidth);
   }
-
-
-
 }
-
-
