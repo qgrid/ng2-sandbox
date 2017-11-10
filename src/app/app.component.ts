@@ -1,5 +1,4 @@
 import {AfterViewInit, Component, ViewChild } from '@angular/core';
-import {GridModel, GridService} from 'ng2-qgrid';
 
 const MEDIUM_WIDTH = 960;
 
@@ -39,9 +38,4 @@ export class AppComponent implements AfterViewInit {
     }
     console.log(window.innerWidth);
   }
-
-
-
 }
-
-
