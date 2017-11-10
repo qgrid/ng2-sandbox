@@ -1,11 +1,4 @@
 <q-grid [model]="gridModel">
   <q-grid-columns generation="deep">
-    <q-grid-column type="number" aggregation="sum"></q-grid-column>
-    <q-grid-column key="totalAmount" type="currency" aggregation="sum"></q-grid-column>
-    <q-grid-column key="businessUnit">
-      <ng-template for="foot">
-        Total:
-      </ng-template>
-    </q-grid-column>
   </q-grid-columns>
 </q-grid>
