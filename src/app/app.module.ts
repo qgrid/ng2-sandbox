@@ -7,7 +7,8 @@ import {
   MdSidenavModule,
   MdButtonModule,
   MdIconModule,
-  MdToolbarModule
+  MdToolbarModule,
+  MdExpansionModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -16,12 +17,16 @@ import { DataService } from './data/data.service';
 import { QGridModule } from './q-grid/grid.module';
 import { ModelListComponent } from './model-list/model-list.component';
 import { ButtonComponent } from './button-component/button-component.component';
+import { PropertyViewerPipe } from './pipes/property-viewer.pipe';
+import { ConstructorNameEditorPipe } from './pipes/constructor-name-editor.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModelListComponent,
-    ButtonComponent
+    ButtonComponent,
+    PropertyViewerPipe,
+    ConstructorNameEditorPipe
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,8 @@ import { ButtonComponent } from './button-component/button-component.component';
     MdSidenavModule,
     MdButtonModule,
     MdIconModule,
-    MdToolbarModule
+    MdToolbarModule,
+    MdExpansionModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

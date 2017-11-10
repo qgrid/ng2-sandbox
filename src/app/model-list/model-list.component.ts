@@ -8,25 +8,17 @@ import { GridModel, GridService } from 'ng2-qgrid';
 })
 export class ModelListComponent implements OnInit {
   public gridModel: GridModel;
+  public models: string[] = [];
   public list: any[] = [];
-  public models: string[] = [
-    'data',
-    'selection',
-    'sort',
-    'group',
-    'pivot',
-    'edit',
-    'style',
-    'action'
-  ];
 
   constructor(gridService: GridService) {
     this.gridModel = gridService.model();
+    this.models = Object.keys(this.gridModel).filter(p => !p.endsWith('Changed')).sort();
+    this.fillListWithModels();
+    console.log(this.models);
   }
 
-  ngOnInit() {
-    this.fillListWithModels();
-  }
+  ngOnInit() {}
 
   fillListWithModels() {
     for (let i = 0, max = this.models.length; i < max; i++) {
