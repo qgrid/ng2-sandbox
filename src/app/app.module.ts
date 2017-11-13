@@ -18,9 +18,7 @@ import { DataService } from './data/data.service';
 import { QGridModule } from './q-grid/grid.module';
 import { ModelListComponent } from './model-list/model-list.component';
 import { ButtonComponent } from './button-component/button-component.component';
-import { PropertyViewerPipe } from './pipes/property-viewer.pipe';
 import { ConstructorNameEditorPipe } from './pipes/constructor-name-editor.pipe';
-import { PropertyArrangerPipe } from './pipes/property-arranger.pipe';
 import { PropertyRowComponent } from './property-row/property-row.component';
 import { PropertyTableComponent } from './property-table/property-table.component';
 
@@ -29,9 +27,7 @@ import { PropertyTableComponent } from './property-table/property-table.componen
     AppComponent,
     ModelListComponent,
     ButtonComponent,
-    PropertyViewerPipe,
     ConstructorNameEditorPipe,
-    PropertyArrangerPipe,
     PropertyRowComponent,
     PropertyTableComponent
   ],
