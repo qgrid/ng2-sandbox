@@ -38,9 +38,6 @@ export class AppComponent implements AfterViewInit {
     }
     console.log(window.innerWidth);
   }
-
-
-
 }
 
 
