@@ -21,11 +21,5 @@ export class PropertyRowComponent implements OnInit {
     for (let i = 0, max = this.values.length; i < max; i++) {
       this.propertiesType.push(typeof this.values[i]);
     }
-
-    console.log(this.model);
-    console.log(this.keys);
-    console.log(this.values);
-    console.log(this.propertiesType);
-    console.log('---------------------------------------------------------------------');
   }
 }
