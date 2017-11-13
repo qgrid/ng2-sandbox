@@ -8,7 +8,8 @@ import {
   MdButtonModule,
   MdIconModule,
   MdToolbarModule,
-  MdExpansionModule
+  MdExpansionModule,
+  MdCheckboxModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -19,6 +20,9 @@ import { ModelListComponent } from './model-list/model-list.component';
 import { ButtonComponent } from './button-component/button-component.component';
 import { PropertyViewerPipe } from './pipes/property-viewer.pipe';
 import { ConstructorNameEditorPipe } from './pipes/constructor-name-editor.pipe';
+import { PropertyArrangerPipe } from './pipes/property-arranger.pipe';
+import { PropertyRowComponent } from './property-row/property-row.component';
+import { PropertyTableComponent } from './property-table/property-table.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { ConstructorNameEditorPipe } from './pipes/constructor-name-editor.pipe'
     ModelListComponent,
     ButtonComponent,
     PropertyViewerPipe,
-    ConstructorNameEditorPipe
+    ConstructorNameEditorPipe,
+    PropertyArrangerPipe,
+    PropertyRowComponent,
+    PropertyTableComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,8 @@ import { ConstructorNameEditorPipe } from './pipes/constructor-name-editor.pipe'
     MdButtonModule,
     MdIconModule,
     MdToolbarModule,
-    MdExpansionModule
+    MdExpansionModule,
+    MdCheckboxModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -1,0 +1,60 @@
+<tr *ngFor="let property of keys; let i = index">
+  <td>{{property}}</td>
+  <td [ngSwitch]="propertiesType[i]">
+
+    <ng-container *ngSwitchCase="'boolean'">
+      <ng-container
+        *ngTemplateOutlet="BooleanCheckboxTemplate">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'number'">
+      <ng-container
+        *ngTemplateOutlet="NumberInputTemplate">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'string'">
+      <ng-container
+        *ngTemplateOutlet="StringTemplate">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'object'">
+      <ng-container
+        *ngTemplateOutlet="ObjectTemplate">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+      <ng-container
+        *ngTemplateOutlet="DefaultTemplate">
+      </ng-container>
+    </ng-container>
+  </td>
+</tr>
+
+
+<ng-template #BooleanCheckboxTemplate>
+  <input type="checkbox">
+</ng-template>
+
+<ng-template #NumberInputTemplate>
+  <input type="number">
+</ng-template>
+
+<ng-template #StringTemplate>
+  <span style="color:green">string</span>
+</ng-template>
+
+<ng-template #ObjectTemplate>
+  <span style="color: yellow">object</span>
+</ng-template>
+
+<ng-template #DefaultTemplate>
+  <span>default</span>
+</ng-template>
+
+
+
+

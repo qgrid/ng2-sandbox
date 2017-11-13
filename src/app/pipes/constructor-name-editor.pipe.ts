@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'editConstructor'
+  name: 'editConstructorName'
 })
 export class ConstructorNameEditorPipe implements PipeTransform {
 
