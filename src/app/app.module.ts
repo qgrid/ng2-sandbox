@@ -17,19 +17,19 @@ import { GridModule } from 'ng2-qgrid';
 import { DataService } from './data/data.service';
 import { QGridModule } from './q-grid/grid.module';
 import { ModelListComponent } from './model-list/model-list.component';
-import { ButtonComponent } from './button-component/button-component.component';
-import { ConstructorNameEditorPipe } from './pipes/constructor-name-editor.pipe';
-import { PropertyRowComponent } from './property-row/property-row.component';
-import { PropertyTableComponent } from './property-table/property-table.component';
+import { ModelPanelComponent } from './model-panel/model-panel.component';
+import { ModelNamePipe } from './pipes/model-name.pipe';
+import { ModelPropertyListComponent } from './model-property-list/model-property-list.component';
+import { PropertyListComponent } from './property-list/property-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModelListComponent,
-    ButtonComponent,
-    ConstructorNameEditorPipe,
-    PropertyRowComponent,
-    PropertyTableComponent
+    ModelPanelComponent,
+    ModelNamePipe,
+    ModelPropertyListComponent,
+    PropertyListComponent
   ],
   imports: [
     BrowserModule,
