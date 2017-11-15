@@ -1,10 +1,10 @@
-<sb-model-button *ngFor="let model of list">
-  <span class="expansion-head">{{model.constructor.name | editConstructorName | uppercase}}</span>
+<sb-model-panel *ngFor="let model of models">
+  <span class="expansion-head">{{model | modelName | uppercase}}</span>
   <span class="expansion-body">
 
-    <sb-property-table
-      [model]=model>
-    </sb-property-table>
+    <sb-property-list
+      [model]="model">
+    </sb-property-list>
 
   </span>
-</sb-model-button>
+</sb-model-panel>
