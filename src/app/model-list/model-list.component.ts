@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {ChangeDetectorRef, Component} from '@angular/core';
 import {GridModel, GridService} from 'ng2-qgrid';
 
 @Component({
@@ -9,9 +9,11 @@ import {GridModel, GridService} from 'ng2-qgrid';
 export class ModelListComponent {
   public gridModel: GridModel;
   public models: any[] = [];
+  public service: any;
 
-  constructor(gridService: GridService) {
-    this.gridModel = gridService.model();
+  constructor(grid: GridService) {
+    this.gridModel = grid.model();
+    this.service = grid.service(this.gridModel);
     this.fillModels();
   }
 
@@ -21,10 +23,22 @@ export class ModelListComponent {
       .filter(p => !p.endsWith('Changed'))
       .sort();
 
-    this.models = keys.map(key => ({
-      name: key,
-      accessor: model[key]
-    }));
+    this.models = keys.map(key => {
+      const modelAccessor = model[key];
+
+      return {
+        name: key,
+        accessor: (...args) => {
+          if (args.length) {
+            modelAccessor(...args);
+            this.service.invalidate();
+            return;
+          }
+
+          return modelAccessor();
+        }
+      }
+    });
   }
 }
 

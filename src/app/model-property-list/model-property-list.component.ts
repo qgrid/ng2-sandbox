@@ -1,7 +1,7 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, ApplicationRef} from '@angular/core';
 
 class Property {
-  constructor(private accessor: any, public key, public type: string) {
+  constructor(public accessor: any, public key, public type: string) {
   }
 
   get value() {
@@ -10,6 +10,10 @@ class Property {
 
   get propertyType() {
     return this.type;
+  }
+
+  get test() {
+    return 'test';
   }
 
   get propertyKey() {
@@ -31,8 +35,7 @@ export class ModelPropertyListComponent implements OnInit {
 
   properties: Property[] = [];
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
     const model = this.model;
@@ -53,12 +56,13 @@ export class ModelPropertyListComponent implements OnInit {
           return instance[key];
         }
 
-        const value = {key: args[0]};
-        assessor(value)
+        const value = {[key]: args[0]};
+        assessor(value);
       };
 
       return new Property(accessor, key, type)
     });
+
   }
 
   getClass(instance) {

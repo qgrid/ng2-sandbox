@@ -1,15 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
-  MdCardModule,
-  MdSidenavModule,
-  MdButtonModule,
-  MdIconModule,
-  MdToolbarModule,
-  MdExpansionModule,
-  MdCheckboxModule
+  MatCardModule,
+  MatSidenavModule,
+  MatButtonModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatExpansionModule,
+  MatCheckboxModule,
+  MatInputModule,
+  MatFormFieldModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -33,17 +37,21 @@ import { PropertyListComponent } from './property-list/property-list.component';
   ],
   imports: [
     BrowserModule,
-    GridModule,
+    FormsModule,
     HttpModule,
+    GridModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     QGridModule,
-    MdCardModule,
-    MdSidenavModule,
-    MdButtonModule,
-    MdIconModule,
-    MdToolbarModule,
-    MdExpansionModule,
-    MdCheckboxModule
+    MatInputModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatExpansionModule,
+    MatCheckboxModule,
+    MatFormFieldModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
