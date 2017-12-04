@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectorRef, Component, NgZone, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, ViewChild} from '@angular/core';
 
 const MEDIUM_WIDTH = 960;
 
