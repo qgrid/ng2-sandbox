@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component} from '@angular/core';
+import {Component} from '@angular/core';
 import {GridModel, GridService} from 'ng2-qgrid';
 
 @Component({
