@@ -1,28 +1,44 @@
-import { Component, OnInit } from '@angular/core';
-import { GridModel, GridService } from 'ng2-qgrid';
+import {Component} from '@angular/core';
+import {GridModel, GridService} from 'ng2-qgrid';
 
 @Component({
   selector: 'sb-model-list',
   templateUrl: './model-list.component.html',
   styleUrls: ['./model-list.component.css']
 })
-export class ModelListComponent implements OnInit {
+export class ModelListComponent {
   public gridModel: GridModel;
-  public models: string[] = [];
-  public list: any[] = [];
+  public models: any[] = [];
+  public service: any;
 
-  constructor(gridService: GridService) {
-    this.gridModel = gridService.model();
-    this.models = Object.keys(this.gridModel).filter(p => !p.endsWith('Changed')).sort();
-    this.fillListWithModels();
-    console.log(this.models);
+  constructor(grid: GridService) {
+    this.gridModel = grid.model();
+    this.service = grid.service(this.gridModel);
+    this.fillModels();
   }
 
-  ngOnInit() {}
+  fillModels() {
+    const model = this.gridModel;
+    const keys = Object.keys(model)
+      .filter(p => !p.endsWith('Changed'))
+      .sort();
 
-  fillListWithModels() {
-    for (let i = 0, max = this.models.length; i < max; i++) {
-      this.list.push(this.gridModel[this.models[i]]());
-    }
+    this.models = keys.map(key => {
+      const modelAccessor = model[key];
+
+      return {
+        name: key,
+        accessor: (...args) => {
+          if (args.length) {
+            modelAccessor(...args);
+            this.service.invalidate();
+            return;
+          }
+
+          return modelAccessor();
+        }
+      }
+    });
   }
 }
+

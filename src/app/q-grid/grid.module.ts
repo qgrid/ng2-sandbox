@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule } from '@angular/http';
 
 import { QGridComponent } from './grid.component';
 import { GridModule } from 'ng2-qgrid';
@@ -7,7 +8,8 @@ import { GridModule } from 'ng2-qgrid';
 @NgModule({
   imports: [
     CommonModule,
-    GridModule
+    GridModule,
+    HttpModule
   ],
   declarations: [
     QGridComponent

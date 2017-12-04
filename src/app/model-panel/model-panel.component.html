@@ -1,0 +1,16 @@
+<mat-expansion-panel>
+
+  <mat-expansion-panel-header class="expansion-header">
+    <mat-panel-title>
+        <ng-content select=".expansion-head"></ng-content>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+ <ng-container>
+        <ng-content select=".expansion-body"></ng-content>
+  </ng-container>
+
+</mat-expansion-panel>
+
+
+

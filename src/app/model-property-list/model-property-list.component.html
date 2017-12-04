@@ -1,0 +1,60 @@
+<tr *ngFor="let property of properties">
+  <td>{{property.propertyKey}}</td>
+  <td [ngSwitch]="property.propertyType">
+
+    <ng-container *ngSwitchCase="'Boolean'">
+      <ng-container
+        *ngTemplateOutlet="BooleanCheckboxTemplate; context: {$implicit: property}">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'Number'">
+      <ng-container
+        *ngTemplateOutlet="NumberInputTemplate; context: {$implicit: property}">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'String'">
+      <ng-container
+        *ngTemplateOutlet="StringTemplate; context: {$implicit: property}">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'Object'">
+      <ng-container
+        *ngTemplateOutlet="ObjectTemplate; context: {$implicit: property}">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+      <ng-container
+        *ngTemplateOutlet="DefaultTemplate">
+      </ng-container>
+    </ng-container>
+  </td>
+</tr>
+
+<ng-template #BooleanCheckboxTemplate let-property>
+  <mat-checkbox [(ngModel)]="property.value">
+  </mat-checkbox>
+</ng-template>
+
+<ng-template #NumberInputTemplate let-property>
+  <input matInput type="number" [(ngModel)]="property.value">
+</ng-template>
+
+<ng-template #StringTemplate let-property>
+    <input matInput type="text" [(ngModel)]="property.value">
+</ng-template>
+
+<ng-template #ObjectTemplate let-property>
+  <span style="color: yellow">object</span>
+</ng-template>
+
+<ng-template #DefaultTemplate>
+  <span>default</span>
+</ng-template>
+
+
+
+
