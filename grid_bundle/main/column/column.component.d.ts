@@ -1,0 +1,38 @@
+import { OnInit } from '@angular/core';
+import { ColumnListService } from 'ng2-qgrid/main/column/column-list.service';
+import { RootService } from 'ng2-qgrid/infrastructure/component';
+import { TemplateHostService } from 'ng2-qgrid/template/template-host.service';
+export declare class ColumnComponent implements OnInit {
+    private root;
+    private columnList;
+    private templateHost;
+    type: string;
+    key: string;
+    path: string;
+    class: string;
+    title: string;
+    value: any;
+    pin: string;
+    aggregation: string;
+    aggregationOptions: any;
+    editor: string;
+    editorOptions: any;
+    format: string;
+    symbol: string;
+    code: string;
+    width: number;
+    minWidth: number;
+    maxWidth: number;
+    canEdit: boolean;
+    canResize: boolean;
+    canSort: boolean;
+    canMove: boolean;
+    canFilter: boolean;
+    canHighlight: boolean;
+    canFocus: boolean;
+    isVisible: boolean;
+    index: number;
+    label: any;
+    constructor(root: RootService, columnList: ColumnListService, templateHost: TemplateHostService);
+    ngOnInit(): void;
+}

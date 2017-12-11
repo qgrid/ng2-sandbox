@@ -1,0 +1,45 @@
+import { Model } from 'ng2-qgrid/core/infrastructure/model';
+import { Action } from 'ng2-qgrid/core/action/action';
+import { Command } from 'ng2-qgrid/core/command/command';
+import { GridService as GridCoreService } from 'ng2-qgrid/core/services/grid';
+import { Pipe } from 'ng2-qgrid/core/pipe/pipe';
+import { PipeUnit } from 'ng2-qgrid/core/pipe/pipe.unit';
+import { getFactory as valueFactory } from 'ng2-qgrid/core/services/value';
+import { getFactory as labelFactory } from 'ng2-qgrid/core/services/label';
+import { RowDetailsStatus } from 'ng2-qgrid/core/row-details/row.details.status';
+export declare class GridService {
+    constructor();
+    model(): Model;
+    service(model: any): GridCoreService;
+    readonly noop: any;
+    readonly identity: any;
+    readonly pipe: typeof Pipe;
+    readonly pipeUnit: typeof PipeUnit;
+    readonly Command: typeof Command;
+    readonly Action: typeof Action;
+    readonly Node: {
+        new (): Node;
+        prototype: Node;
+        readonly ATTRIBUTE_NODE: number;
+        readonly CDATA_SECTION_NODE: number;
+        readonly COMMENT_NODE: number;
+        readonly DOCUMENT_FRAGMENT_NODE: number;
+        readonly DOCUMENT_NODE: number;
+        readonly DOCUMENT_POSITION_CONTAINED_BY: number;
+        readonly DOCUMENT_POSITION_CONTAINS: number;
+        readonly DOCUMENT_POSITION_DISCONNECTED: number;
+        readonly DOCUMENT_POSITION_FOLLOWING: number;
+        readonly DOCUMENT_POSITION_IMPLEMENTATION_SPECIFIC: number;
+        readonly DOCUMENT_POSITION_PRECEDING: number;
+        readonly DOCUMENT_TYPE_NODE: number;
+        readonly ELEMENT_NODE: number;
+        readonly ENTITY_NODE: number;
+        readonly ENTITY_REFERENCE_NODE: number;
+        readonly NOTATION_NODE: number;
+        readonly PROCESSING_INSTRUCTION_NODE: number;
+        readonly TEXT_NODE: number;
+    };
+    readonly RowDetailsStatus: typeof RowDetailsStatus;
+    readonly valueFactory: typeof valueFactory;
+    readonly labelFactory: typeof labelFactory;
+}
