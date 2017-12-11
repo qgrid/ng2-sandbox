@@ -1,0 +1,37 @@
+import { EventEmitter, OnInit, ElementRef, ChangeDetectorRef } from '@angular/core';
+import { RootComponent, RootService } from 'ng2-qgrid/infrastructure/component';
+import { EventListener } from 'ng2-qgrid/core/infrastructure/event.listener';
+export declare class GridComponent extends RootComponent implements OnInit {
+    private rootService;
+    private element;
+    private changeDetector;
+    model: any;
+    dataRows: any;
+    dataColumns: any;
+    dataPipe: any;
+    selectionItems: any;
+    selectionMode: any;
+    selectionUnit: any;
+    selectionKey: any;
+    groupBy: any;
+    pivotBy: any;
+    sortBy: any;
+    sortMode: any;
+    editMode: any;
+    editEnter: any;
+    editCommit: any;
+    editCancel: any;
+    editReset: any;
+    styleRow: any;
+    styleCell: any;
+    gridId: any;
+    gridTitle: any;
+    actionItems: any;
+    selectionChanged: EventEmitter<any>;
+    listener: EventListener;
+    constructor(rootService: RootService, element: ElementRef, changeDetector: ChangeDetectorRef);
+    ngOnInit(): void;
+    invalidateVisibility(): void;
+    readonly isActive: boolean;
+    readonly visibility: any;
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/main/core/scroll/vscroll.service.ts"],"names":[],"mappings":";;AAAA,kEAAsD;AAEtD;IACC,OAAO;QACN,MAAM,CAAC;YACN,QAAQ,EAAE,EAAE;YACZ,SAAS,EAAE;gBACV,KAAK,EAAE,GAAG,EAAE;gBACZ,CAAC;gBACD,KAAK,EAAE,GAAG,EAAE;gBACZ,CAAC;gBACD,SAAS,EAAE,IAAI,sBAAK,EAAE;aACtB;SACD,CAAC;IACH,CAAC;CACD;AAbD,wCAaC","file":"vscroll.service.js","sourceRoot":""}

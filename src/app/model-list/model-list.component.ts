@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {GridModel, GridService} from 'ng2-qgrid';
+import {GridModel, GridService} from '../../../grid_bundle';
 
 @Component({
   selector: 'sb-model-list',

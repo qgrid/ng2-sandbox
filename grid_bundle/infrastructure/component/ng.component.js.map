@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/infrastructure/component/ng.component.ts"],"names":[],"mappings":";;AACA,yEAAqE;AAErE,iBAAkC,SAAQ,gCAAc;IACvD;QACC,KAAK,EAAE,CAAC;IACT,CAAC;IAED,QAAQ;IACR,CAAC;IAED,WAAW;QACV,IAAI,CAAC,OAAO,EAAE,CAAC;IAChB,CAAC;CACD;AAXD,kCAWC","file":"ng.component.js","sourceRoot":""}

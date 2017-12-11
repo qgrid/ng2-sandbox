@@ -1,0 +1,114 @@
+$color-white: #fafafa;
+$color-blue: #2F80ED;
+$color-lightgrey: #ddd;
+$color-darkgrey: #C8C8C8;
+$color-black: #000;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+}
+
+.mat-card {
+  height: 100%;
+}
+
+a, a:visited {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+}
+
+//Left Navbar
+
+.side-nav {
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: $color-lightgrey;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-lightgrey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-darkgrey;
+  }
+
+  &-box {
+    width: 21vh;
+    height: 100vh;
+
+    &-content {
+      background-color: #2F80ED;
+    }
+  }
+
+}
+
+//Top Toolbar
+
+.toolbar {
+  background-color: $color-blue;
+  height: 20%;
+  box-shadow:0 2px 4px rgba($color-black,.3);
+
+  &-button {
+    min-width: 15px;
+    background-color: $color-blue;
+    border-radius: 20px;
+
+    &-icon {
+      color: rgba(255, 255, 255, 0.87);
+    }
+
+  }
+
+  &-label {
+    color: rgba(255, 255, 255, 0.87);
+    margin-left: 20px;
+  }
+
+}
+
+//q-Grid section
+
+.q-grid-section {
+  height: 100vh;
+  padding: 10px;
+
+  &-box {
+    background-color: white;
+  }
+}
+
+
+// media
+
+@media (min-width:960px){
+  .toolbar {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

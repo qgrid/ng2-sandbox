@@ -1,32 +1,30 @@
-<div class="main">
+<div>
 
   <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side" opened="false">
-      <div class="side-nav">
-        <div class="scrolling-content">
+    <mat-sidenav #sidenav mode="side" opened="false" class="side-nav">
+      <div class="side-nav-box">
+        <div class="side-nav-box-content">
           <sb-model-list></sb-model-list>
         </div>
       </div>
     </mat-sidenav>
 
-    <mat-drawer-container>
-      <div class="main-content">
+      <div class="backdrop">
         <mat-toolbar class="toolbar">
-          <button mat-button #navButton (click)="sidenav.toggle()" class="nav-button">
-            <mat-icon class="nav-icon">menu</mat-icon>
+          <button mat-button #navButton (click)="sidenav.toggle()" class="toolbar-button">
+            <mat-icon class="toolbar-button-icon">menu</mat-icon>
           </button>
-          <span class="nav-label">
+          <span class="toolbar-label">
         <a href="./#!/home">QGRID2</a>
       </span>
         </mat-toolbar>
 
-        <div class="page-details">
-          <mat-card class="page-details-example" style="height: 86vh">
+        <div class="q-grid-section">
+          <mat-card class="q-grid-section-box">
             <grid></grid>
           </mat-card>
         </div>
       </div>
-    </mat-drawer-container>
   </mat-sidenav-container>
 
 </div>
