@@ -1,15 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 
-function getClass(instance) {
-  return {}.toString.call(instance).slice(8, -1);
-}
-
 function getNameOfFunction (foo: any) {
   return foo.name;
-}
-
-function helperFilter(array: any) {
-
 }
 
 class Property {
