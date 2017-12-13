@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "concurrently --kill-others \"npm run serve\" \"npm run compile:sass\"",
-    "serve": "ng serve --port 3005",
+    "serve": "ng serve --port 3005 --open",
     "compile:sass": "node-sass src/styles.scss src/styles.css -w",
     "build": "ng build",
     "test": "ng test",

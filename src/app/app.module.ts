@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +13,9 @@ import {
   MatExpansionModule,
   MatCheckboxModule,
   MatInputModule,
-  MatFormFieldModule
+  MatFormFieldModule,
+  MatChipsModule,
+  MatListModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -38,6 +40,7 @@ import { PropertyListComponent } from './property-list/property-list.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     GridModule,
     HttpClientModule,
@@ -51,7 +54,9 @@ import { PropertyListComponent } from './property-list/property-list.component';
     MatToolbarModule,
     MatExpansionModule,
     MatCheckboxModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatChipsModule,
+    MatListModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

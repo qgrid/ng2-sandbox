@@ -1,9 +1,14 @@
 .expansion-head {
   color: rgba(255, 255, 255, 0.87);
   font-size: 12px;
+  background-color: #2F80ED;
 }
 
 .expansion-body {
   color: rgba(255, 255, 255, 0.87);
   font-size: 9px;
+}
+
+.mat-expansion-panel-content {
+  background-color: #2F80ED;
 }

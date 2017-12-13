@@ -1,7 +1,11 @@
-.expansion-header {
-  color: rgba(255, 255, 255, 0.87);
+.expansion-panel {
+  background-color: #2F80ED;
 }
 
-.mat-expansion-indicator {
-  display: none;
+.expansion-header {
+  color: rgba(255, 255, 255, 0.87);
+
+  background-color: #2F80ED;
 }
+
+/*#2a73d5;*/
