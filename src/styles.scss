@@ -4,6 +4,8 @@ $color-lightgrey: #ddd;
 $color-darkgrey: #C8C8C8;
 $color-black: #000;
 
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 * {
   margin: 0;
   padding: 0;
@@ -24,13 +26,14 @@ body {
 }
 
 a, a:visited {
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba($color-white, 0.87);
   text-decoration: none;
 }
 
 //Left Navbar
 
 .side-nav {
+  overflow-x: hidden;
   &::-webkit-scrollbar {
     width: 8px;
     background-color: $color-lightgrey;
@@ -49,7 +52,7 @@ a, a:visited {
     height: 100vh;
 
     &-content {
-      background-color: #2F80ED;
+      background-color: $color-blue;
     }
   }
 
@@ -63,7 +66,6 @@ a, a:visited {
   box-shadow:0 2px 4px rgba($color-black,.3);
 
   &-button {
-    min-width: 15px;
     background-color: $color-blue;
     border-radius: 20px;
 
@@ -91,14 +93,26 @@ a, a:visited {
   }
 }
 
-
-// media
-
-@media (min-width:960px){
-  .toolbar {
-    display: none;
-  }
+//Backdrop
+.mat-drawer-transition .mat-drawer-backdrop {
+    background-color: rgba($color-black, .7);
 }
+
+//Material overrides
+
+.mat-expansion-indicator::after, .mat-expansion-panel-header-description {
+  color: rgba($color-white, 0.87);
+}
+
+.mat-chip {
+  font-size: 9px;
+}
+
+.mat-chip:not(.mat-basic-chip) {
+  border-radius: 0px;
+}
+
+
 
 
 

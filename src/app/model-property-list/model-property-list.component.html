@@ -26,6 +26,12 @@
       </ng-container>
     </ng-container>
 
+    <ng-container *ngSwitchCase="'Array'">
+      <ng-container
+        *ngTemplateOutlet="ArrayTemplate; context: {$implicit: property}">
+      </ng-container>
+    </ng-container>
+
     <ng-container *ngSwitchDefault>
       <ng-container
         *ngTemplateOutlet="DefaultTemplate">
@@ -40,21 +46,33 @@
 </ng-template>
 
 <ng-template #NumberInputTemplate let-property>
-  <input matInput type="number" [(ngModel)]="property.value">
+  <form>
+  <mat-form-field>
+    <input matInput type="number" [(ngModel)]="property.value" name="number">
+  </mat-form-field>
+</form>
 </ng-template>
 
 <ng-template #StringTemplate let-property>
-    <input matInput type="text" [(ngModel)]="property.value">
+  <form>
+    <mat-form-field>
+      <input matInput type="text" [(ngModel)]="property.value" name="text">
+    </mat-form-field>
+  </form>
+</ng-template>
+
+<ng-template #ArrayTemplate let-property>
+  <mat-chip-list *ngFor="let item of property.value">
+    <mat-chip color="accent" selected="true">{{item}}</mat-chip>
+  </mat-chip-list>
 </ng-template>
 
 <ng-template #ObjectTemplate let-property>
-  <span style="color: yellow">object</span>
+  <ul class="propertyList" *ngFor="let item of property.value">
+    <li class="mat-list">{{item}}</li>
+  </ul>
 </ng-template>
 
 <ng-template #DefaultTemplate>
   <span>default</span>
 </ng-template>
-
-
-
-

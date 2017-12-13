@@ -1,4 +1,4 @@
-import {AfterViewInit, ChangeDetectorRef, Component, ViewChild} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, ViewChild, ViewEncapsulation} from '@angular/core';
 
 const MEDIUM_WIDTH = 960;
 
@@ -11,13 +11,13 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('sidenav') sider: any;
   @ViewChild('navButton') navButton: any;
 
-  constructor(private cdRef: ChangeDetectorRef) {};
+  constructor(private cdRef: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.screenWatcher();
     this.initResizeListener();
     this.cdRef.detectChanges();
-  };
+  }
 
   initResizeListener() {
     const eventHandler = _ => {
@@ -25,7 +25,7 @@ export class AppComponent implements AfterViewInit {
     };
 
     window.addEventListener('resize', eventHandler, false);
-  };
+  }
 
   screenWatcher() {
     if (window.innerWidth > MEDIUM_WIDTH) {
