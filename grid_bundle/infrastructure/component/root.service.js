@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const infrastructure_1 = require("ng2-qgrid/core/infrastructure");
+const infrastructure_1 = require("../../../grid_bundle/core/infrastructure");
 const core_1 = require("@angular/core");
-const infrastructure_2 = require("ng2-qgrid/core/infrastructure");
-const utility_1 = require("ng2-qgrid/core/utility");
-const bag_1 = require("ng2-qgrid/core/dom/bag");
+const infrastructure_2 = require("../../../grid_bundle/core/infrastructure");
+const utility_1 = require("../../../grid_bundle/core/utility");
+const bag_1 = require("../../../grid_bundle/core/dom/bag");
 class RootService {
     constructor(changeDetector) {
         this.changeDetector = changeDetector;

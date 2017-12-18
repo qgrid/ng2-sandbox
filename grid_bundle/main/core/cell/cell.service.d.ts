@@ -1,5 +1,5 @@
 import { TemplateRef } from '@angular/core';
-import { TemplateCacheService, TemplateLinkService } from 'ng2-qgrid/template';
+import { TemplateCacheService, TemplateLinkService } from '../../../grid_bundle/template';
 export declare class CellService {
     private templateCache;
     private templateLink;

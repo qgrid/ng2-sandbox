@@ -1,6 +1,6 @@
 <tr *ngFor="let property of properties">
-  <td>{{property.propertyKey}}</td>
-  <td [ngSwitch]="property.propertyType">
+  <td width="70%">{{property.propertyKey}}</td>
+  <td width="3n0%" [ngSwitch]="property.propertyType">
 
     <ng-container *ngSwitchCase="'Boolean'">
       <ng-container

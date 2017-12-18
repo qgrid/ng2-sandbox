@@ -1,10 +1,10 @@
 import { ElementRef, OnDestroy, OnInit, ViewContainerRef } from '@angular/core';
 import { ViewCoreService } from '../view/view-core.service';
 import { TableCoreService } from '../table/table-core.service';
-import { RootService } from 'ng2-qgrid/infrastructure/component';
-import { CellService } from 'ng2-qgrid/main/core/cell';
-import { ColumnModel } from 'ng2-qgrid/core/column-type/column.model';
-import { ColumnView } from 'ng2-qgrid/core/scene/view/column.view';
+import { RootService } from '../../../grid_bundle/infrastructure/component';
+import { CellService } from '../../../grid_bundle/main/core/cell';
+import { ColumnModel } from '../../../grid_bundle/core/column-type/column.model';
+import { ColumnView } from '../../../grid_bundle/core/scene/view/column.view';
 import { TrCoreDirective } from '../row/tr-core.directive';
 export declare class TdCoreDirective implements OnInit, OnDestroy {
     $view: ViewCoreService;

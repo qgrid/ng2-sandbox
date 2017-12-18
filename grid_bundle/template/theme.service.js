@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const infrastructure_1 = require("ng2-qgrid/core/infrastructure");
+const infrastructure_1 = require("../../../grid_bundle/core/infrastructure");
 class ThemeService {
     constructor() {
         this.changed = new infrastructure_1.Event();

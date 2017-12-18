@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const definition_1 = require("ng2-qgrid/core/definition");
+const definition_1 = require("../../../grid_bundle/core/definition");
 const view_core_service_1 = require("../view/view-core.service");
 const table_core_service_1 = require("../table/table-core.service");
-const component_1 = require("ng2-qgrid/infrastructure/component");
-const cell_1 = require("ng2-qgrid/main/core/cell");
-const infrastructure_1 = require("ng2-qgrid/core/infrastructure");
+const component_1 = require("../../../grid_bundle/infrastructure/component");
+const cell_1 = require("../../../grid_bundle/main/core/cell");
+const infrastructure_1 = require("../../../grid_bundle/core/infrastructure");
 const tr_core_directive_1 = require("../row/tr-core.directive");
 class TdCoreDirective {
     constructor($view, root, viewContainerRef, cellService, table, tr, element) {

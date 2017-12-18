@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const command_1 = require("ng2-qgrid/core/command");
+const command_1 = require("../../../grid_bundle/core/command");
 const plugin_component_1 = require("../plugin.component");
-const root_service_1 = require("ng2-qgrid/infrastructure/component/root.service");
+const root_service_1 = require("../../../grid_bundle/infrastructure/component/root.service");
 class PagerComponent extends plugin_component_1.PluginComponent {
     constructor(root) {
         super(root);

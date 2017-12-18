@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const action_bar_service_1 = require("./action-bar.service");
-const action_1 = require("ng2-qgrid/core/action");
+const action_1 = require("../../../grid_bundle/core/action");
 class ActionComponent {
     constructor(actionService) {
         this.actionService = actionService;

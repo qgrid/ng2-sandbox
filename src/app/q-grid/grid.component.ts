@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {GridModel, GridService} from '../../../grid_bundle';
-import { DataService, Human } from '../data/data.service';
+import { DataService, Human } from '../services/data.service';
 
 @Component({
   selector: 'grid',

@@ -1,12 +1,12 @@
-import { Model } from 'ng2-qgrid/core/infrastructure/model';
-import { Action } from 'ng2-qgrid/core/action/action';
-import { Command } from 'ng2-qgrid/core/command/command';
-import { GridService as GridCoreService } from 'ng2-qgrid/core/services/grid';
-import { Pipe } from 'ng2-qgrid/core/pipe/pipe';
-import { PipeUnit } from 'ng2-qgrid/core/pipe/pipe.unit';
-import { getFactory as valueFactory } from 'ng2-qgrid/core/services/value';
-import { getFactory as labelFactory } from 'ng2-qgrid/core/services/label';
-import { RowDetailsStatus } from 'ng2-qgrid/core/row-details/row.details.status';
+import { Model } from '../../../grid_bundle/core/infrastructure/model';
+import { Action } from '../../../grid_bundle/core/action/action';
+import { Command } from '../../../grid_bundle/core/command/command';
+import { GridService as GridCoreService } from '../../../grid_bundle/core/services/grid';
+import { Pipe } from '../../../grid_bundle/core/pipe/pipe';
+import { PipeUnit } from '../../../grid_bundle/core/pipe/pipe.unit';
+import { getFactory as valueFactory } from '../../../grid_bundle/core/services/value';
+import { getFactory as labelFactory } from '../../../grid_bundle/core/services/label';
+import { RowDetailsStatus } from '../../../grid_bundle/core/row-details/row.details.status';
 export declare class GridService {
     constructor();
     model(): Model;

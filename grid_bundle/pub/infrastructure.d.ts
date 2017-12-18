@@ -1,6 +1,6 @@
-export { Action } from 'ng2-qgrid/core/action/action';
-export { Command } from 'ng2-qgrid/core/command/command';
-export { Pipe } from 'ng2-qgrid/core/pipe/pipe';
-export { PipeUnit } from 'ng2-qgrid/core/pipe/pipe.unit';
-export { Node } from 'ng2-qgrid/core/node/node';
-export { RowDetailsStatus } from 'ng2-qgrid/core/row-details/row.details.status';
+export { Action } from '../../grid_bundle/core/action/action';
+export { Command } from '../../grid_bundle/core/command/command';
+export { Pipe } from '../../grid_bundle/core/pipe/pipe';
+export { PipeUnit } from '../../grid_bundle/core/pipe/pipe.unit';
+export { Node } from '../../grid_bundle/core/node/node';
+export { RowDetailsStatus } from '../../grid_bundle/core/row-details/row.details.status';

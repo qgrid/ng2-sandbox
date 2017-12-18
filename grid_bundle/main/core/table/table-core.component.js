@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const component_1 = require("ng2-qgrid/infrastructure/component");
+const component_1 = require("../../../grid_bundle/infrastructure/component");
 const table_core_service_1 = require("./table-core.service");
 class TableCoreComponent {
     constructor(root, table) {

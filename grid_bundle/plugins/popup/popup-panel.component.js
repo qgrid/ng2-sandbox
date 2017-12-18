@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const popup_service_1 = require("ng2-qgrid/plugins/popup/popup.service");
+const popup_service_1 = require("../../../grid_bundle/plugins/popup/popup.service");
 class PopupPanelComponent {
     constructor(popupService, element) {
         this.popupService = popupService;

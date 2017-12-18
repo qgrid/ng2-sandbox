@@ -29,7 +29,10 @@ import {ScrollModel} from '../scroll/scroll.model';
 import {ExportModel} from '../export/export.model';
 import {ActionModel} from '../action/action.model';
 import {FetchModel} from '../fetch/fetch.model';
+import {ValidationModel} from '../validation/validation.model';
 import {Event} from './event';
+import {PersistenceModel} from '../persistence/persistence.model';
+import {PipeModel} from '../pipe/pipe.model'; 
 
 export declare class Model {
 	constructor();
@@ -39,6 +42,10 @@ export declare class Model {
 	grid(value?: object, tag?: object): GridModel;
 
 	gridChanged: Event;
+
+	pipe(value?: object, tag?: object): PipeModel;
+	
+	pipeChanged: Event;	
 
 	scene(value?: object, tag?: object): SceneModel;
 
@@ -159,4 +166,12 @@ export declare class Model {
 	fetch(value?: object, tag?: object): FetchModel;
 
 	fetchChanged: Event;
+
+	persistence(value?: object, tag?: object): PersistenceModel;
+
+	persistenceChanged: Event;
+
+	validation(value?: object, tag?: object): ValidationModel;
+
+	validationChanged: Event;
 }

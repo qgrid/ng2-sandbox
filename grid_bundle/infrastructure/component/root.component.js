@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const infrastructure_1 = require("ng2-qgrid/core/infrastructure");
-const utility_1 = require("ng2-qgrid/core/utility");
+const infrastructure_1 = require("../../../grid_bundle/core/infrastructure");
+const utility_1 = require("../../../grid_bundle/core/utility");
 const ng_component_1 = require("./ng.component");
 class RootComponent extends ng_component_1.NgComponent {
     constructor() {

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const utility_1 = require("ng2-qgrid/core/utility");
+const utility_1 = require("../../../grid_bundle/core/utility");
 class BlurDirective {
     constructor(renderer, elementRef) {
         this.renderer = renderer;

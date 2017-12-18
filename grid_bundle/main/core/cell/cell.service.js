@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const template_1 = require("ng2-qgrid/template");
-const infrastructure_1 = require("ng2-qgrid/core/infrastructure");
-const utility_1 = require("ng2-qgrid/core/utility");
+const template_1 = require("../../../grid_bundle/template");
+const infrastructure_1 = require("../../../grid_bundle/core/infrastructure");
+const utility_1 = require("../../../grid_bundle/core/utility");
 function canBuild(column) {
     return column.type !== 'pad';
 }

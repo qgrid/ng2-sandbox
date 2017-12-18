@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const error_1 = require("ng2-qgrid/core/infrastructure/error");
-const root_service_1 = require("ng2-qgrid/infrastructure/component/root.service");
+const error_1 = require("../../../grid_bundle/core/infrastructure/error");
+const root_service_1 = require("../../../grid_bundle/infrastructure/component/root.service");
 const plugin_component_1 = require("../plugin.component");
 class ActionCoreComponent extends plugin_component_1.PluginComponent {
     constructor(root) {

@@ -8,7 +8,7 @@ const grid_service_1 = require("./grid/grid.service");
 const column_1 = require("./column");
 const box_1 = require("./box");
 const core_2 = require("./core");
-const theme_module_1 = require("ng2-qgrid/themes/material/theme.module");
+const theme_module_1 = require("../../../grid_bundle/themes/material/theme.module");
 const toolbar_component_1 = require("./toolbar/toolbar.component");
 tslib_1.__exportStar(require("./box/index"), exports);
 tslib_1.__exportStar(require("./column/index"), exports);

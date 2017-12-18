@@ -2,14 +2,25 @@
 
   <mat-sidenav-container>
     <mat-sidenav #sidenav mode="side" opened="false" class="side-nav">
-      <div class="side-nav-box">
-        <div class="side-nav-box-content">
-          <sb-model-list></sb-model-list>
+      <div class="flex-row">
+        <div class="side-nav-head">
+          <button mat-button class="side-nav-head-button" #historyButton (click)="openHistoryWindow()">
+            <mat-icon class="side-nav-head-button-icon">history</mat-icon>
+          </button>
+        </div>
+        <div class="side-nav-patch">
+        </div>
+      </div>
+      <div class="side-nav-body">
+        <div class="side-nav-body-box">
+          <div class="side-nav-body-box-content">
+            <sb-model-list></sb-model-list>
+          </div>
         </div>
       </div>
     </mat-sidenav>
 
-      <div class="backdrop">
+      <div>
         <mat-toolbar class="toolbar">
           <button mat-button #navButton (click)="sidenav.toggle()" class="toolbar-button">
             <mat-icon class="toolbar-button-icon">menu</mat-icon>

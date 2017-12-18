@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const view_core_service_1 = require("../view/view-core.service");
-const component_1 = require("ng2-qgrid/infrastructure/component");
+const component_1 = require("../../../grid_bundle/infrastructure/component");
 class TrCoreDirective {
     constructor($view, root, elementRef) {
         this.$view = $view;

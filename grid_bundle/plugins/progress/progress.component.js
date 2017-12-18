@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
 const plugin_component_1 = require("../plugin.component");
-const component_1 = require("ng2-qgrid/infrastructure/component");
+const component_1 = require("../../../grid_bundle/infrastructure/component");
 class ProgressComponent extends plugin_component_1.PluginComponent {
     constructor(root) {
         super(root);

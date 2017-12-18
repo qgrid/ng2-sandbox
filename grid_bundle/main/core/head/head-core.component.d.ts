@@ -1,5 +1,5 @@
 import { ViewCoreService } from '../view/view-core.service';
-import { ColumnView } from 'ng2-qgrid/core/scene/view/column.view';
+import { ColumnView } from '../../../grid_bundle/core/scene/view/column.view';
 import { TableCoreService } from '../table/table-core.service';
 export declare class HeadCoreComponent {
     $view: ViewCoreService;

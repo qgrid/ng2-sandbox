@@ -1,5 +1,5 @@
 import { ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { RootService } from 'ng2-qgrid/infrastructure/component';
+import { RootService } from '../../../grid_bundle/infrastructure/component';
 export declare class DragDirective implements OnInit, OnDestroy {
     private root;
     private element;

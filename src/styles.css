@@ -6,7 +6,7 @@
 
 html {
   height: 100%;
-  overflow: hidden; }
+  overflow: hidden !important; }
 
 body {
   height: 100%; }
@@ -19,19 +19,33 @@ a, a:visited {
   text-decoration: none; }
 
 .side-nav {
-  overflow-x: hidden; }
-  .side-nav::-webkit-scrollbar {
-    width: 8px;
+  overflow-y: hidden !important; }
+  .side-nav-head {
+    background-color: #2F80ED;
+    height: 5vh;
+    flex: 28; }
+    .side-nav-head-button {
+      top: 7px;
+      left: 8vh; }
+      .side-nav-head-button-icon {
+        color: #fafafa; }
+  .side-nav-patch {
+    flex: 1;
     background-color: #ddd; }
-  .side-nav::-webkit-scrollbar-track {
-    background-color: #ddd; }
-  .side-nav::-webkit-scrollbar-thumb {
-    background-color: #C8C8C8; }
-  .side-nav-box {
-    width: 21vh;
-    height: 100vh; }
-    .side-nav-box-content {
-      background-color: #2F80ED; }
+  .side-nav-body {
+    overflow-x: hidden; }
+    .side-nav-body::-webkit-scrollbar {
+      width: 8px;
+      background-color: #ddd; }
+    .side-nav-body::-webkit-scrollbar-track {
+      background-color: #ddd; }
+    .side-nav-body::-webkit-scrollbar-thumb {
+      background-color: #C8C8C8; }
+    .side-nav-body-box {
+      width: 21vh;
+      height: 100vh; }
+      .side-nav-body-box-content {
+        background-color: #2F80ED; }
 
 .toolbar {
   background-color: #2F80ED;
@@ -45,6 +59,24 @@ a, a:visited {
   .toolbar-label {
     color: rgba(255, 255, 255, 0.87);
     margin-left: 20px; }
+
+.dialog {
+  align-items: center; }
+  .dialog-persistence {
+    display: flex !important;
+    width: 35vh; }
+    .dialog-persistence-title {
+      margin-right: 5px;
+      flex: 5;
+      text-align: center; }
+      .dialog-persistence-title-mat-form {
+        width: 26vh; }
+    .dialog-persistence-button {
+      top: 12px;
+      flex: 1; }
+  .dialog-list {
+    position: relative;
+    width: 35vh; }
 
 .q-grid-section {
   height: 100vh;
@@ -61,5 +93,30 @@ a, a:visited {
 .mat-chip {
   font-size: 9px; }
 
+.mat-button {
+  min-width: 0 !important; }
+
 .mat-chip:not(.mat-basic-chip) {
   border-radius: 0px; }
+
+.mat-dialog-container {
+  position: absolute;
+  width: 40vh !important;
+  height: 40vh !important;
+  top: 50%;
+  left: 50%;
+  margin: -234px 0 0 -196px; }
+
+.dialog-list .mat-pseudo-checkbox {
+  display: none; }
+
+.mat-menu-panel {
+  width: 19vh !important; }
+
+.flex-row {
+  display: flex !important;
+  flex-direction: row; }
+
+.flex-column {
+  display: flex !important;
+  flex-direction: column; }

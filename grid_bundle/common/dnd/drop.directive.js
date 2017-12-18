@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const infrastructure_1 = require("ng2-qgrid/core/infrastructure");
-const event_listener_1 = require("ng2-qgrid/core/infrastructure/event.listener");
+const infrastructure_1 = require("../../../grid_bundle//core/infrastructure");
+const event_listener_1 = require("../../../grid_bundle//core/infrastructure/event.listener");
 const drag_service_1 = require("./drag.service");
-const definition_1 = require("ng2-qgrid/core/definition");
+const definition_1 = require("../../../grid_bundle//core/definition");
 class DropDirective {
     constructor(elementRef) {
         this.onDrop = new core_1.EventEmitter();

@@ -10,10 +10,10 @@ const foot_1 = require("./foot");
 const row_1 = require("./row");
 const scroll_1 = require("./scroll");
 const markup_1 = require("./markup");
-const template_1 = require("ng2-qgrid/template");
-const template_module_1 = require("ng2-qgrid/template/template.module");
-const common_1 = require("ng2-qgrid/common");
-const table_1 = require("ng2-qgrid/main/core/table");
+const template_1 = require("../../../grid_bundle/template");
+const template_module_1 = require("../../../grid_bundle/template/template.module");
+const common_1 = require("../../../grid_bundle/common");
+const table_1 = require("../../../grid_bundle/main/core/table");
 class CoreModule {
 }
 CoreModule.decorators = [

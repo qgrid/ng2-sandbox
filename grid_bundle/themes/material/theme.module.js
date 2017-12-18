@@ -5,9 +5,9 @@ const platform_browser_1 = require("@angular/platform-browser");
 const forms_1 = require("@angular/forms");
 const theme_service_1 = require("./theme.service");
 const theme_component_1 = require("./theme.component");
-const plugins_1 = require("ng2-qgrid/plugins");
-const template_1 = require("ng2-qgrid/template");
-const common_1 = require("ng2-qgrid/common");
+const plugins_1 = require("../../../grid_bundle/plugins");
+const template_1 = require("../../../grid_bundle/template");
+const common_1 = require("../../../grid_bundle/common");
 const material_1 = require("@angular/material");
 class ThemeModule {
     constructor() {

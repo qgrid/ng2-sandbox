@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const event_listener_1 = require("ng2-qgrid/core/infrastructure/event.listener");
-const event_manager_1 = require("ng2-qgrid/core/infrastructure/event.manager");
-const component_1 = require("ng2-qgrid/infrastructure/component");
+const event_listener_1 = require("../../../grid_bundle/core/infrastructure/event.listener");
+const event_manager_1 = require("../../../grid_bundle/core/infrastructure/event.manager");
+const component_1 = require("../../../grid_bundle/infrastructure/component");
 class PopupHeadDirective extends component_1.NgComponent {
     constructor(element) {
         super();
@@ -22,7 +22,7 @@ class PopupHeadDirective extends component_1.NgComponent {
             this.position.x = e.offsetX;
             this.position.y = e.offsetY;
             popupElement.classList.add('drag');
-            e.dataTransfer.setDragImage(document.createElement('div'), 0, 0); // eslint-disable-line no-undef			
+            e.dataTransfer.setDragImage(document.createElement('div'), 0, 0); // eslint-disable-line no-undef
         }));
         this.using(this.eventListener.on('drag', event => {
             const cx = event.clientX;

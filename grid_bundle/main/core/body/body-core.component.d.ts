@@ -1,8 +1,8 @@
 import { ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { NgComponent, RootService } from 'ng2-qgrid/infrastructure/component';
-import { ColumnView } from 'ng2-qgrid/core/scene/view/column.view';
-import { SelectionModel } from 'ng2-qgrid/core/selection/selection.model';
-import { Model } from 'ng2-qgrid/core/infrastructure/model';
+import { NgComponent, RootService } from '../../../grid_bundle/infrastructure/component';
+import { ColumnView } from '../../../grid_bundle/core/scene/view/column.view';
+import { SelectionModel } from '../../../grid_bundle/core/selection/selection.model';
+import { Model } from '../../../grid_bundle/core/infrastructure/model';
 import { ViewCoreService } from '../view/view-core.service';
 import { TableCoreService } from '../table/table-core.service';
 export declare class BodyCoreComponent extends NgComponent implements OnInit, OnDestroy {

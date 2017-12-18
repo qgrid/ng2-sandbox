@@ -1,4 +1,4 @@
-import { Model } from 'ng2-qgrid/core/infrastructure/model';
+import { Model } from '../../../grid_bundle/core/infrastructure/model';
 import { PopupSettings } from './popup.settings';
 export declare class Popup {
     private state;

@@ -1,5 +1,5 @@
 import { ElementRef } from '@angular/core';
-import { NgComponent } from 'ng2-qgrid/infrastructure/component';
+import { NgComponent } from '../../../grid_bundle/infrastructure/component';
 import { Popup } from './popup';
 export declare class PopupHeadDirective extends NgComponent {
     popup: Popup;

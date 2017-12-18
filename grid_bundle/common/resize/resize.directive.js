@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const Infrastructure = require("ng2-qgrid/core/infrastructure");
-const definition_1 = require("ng2-qgrid/core/definition");
-const component_1 = require("ng2-qgrid/infrastructure/component");
-const utility_1 = require("ng2-qgrid/core/utility");
+const Infrastructure = require("../../../grid_bundle/core/infrastructure");
+const definition_1 = require("../../../grid_bundle/core/definition");
+const component_1 = require("../../../grid_bundle/infrastructure/component");
+const utility_1 = require("../../../grid_bundle/core/utility");
 const platform_browser_1 = require("@angular/platform-browser");
 class ResizeDirective extends component_1.NgComponent {
     constructor(root, elementRef, document) {

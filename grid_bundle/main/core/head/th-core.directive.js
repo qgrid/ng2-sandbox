@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const definition_1 = require("ng2-qgrid/core/definition");
-const component_1 = require("ng2-qgrid/infrastructure/component");
+const definition_1 = require("../../../grid_bundle/core/definition");
+const component_1 = require("../../../grid_bundle/infrastructure/component");
 const table_core_service_1 = require("../table/table-core.service");
 const cell_service_1 = require("../cell/cell.service");
 const view_core_service_1 = require("../view/view-core.service");
