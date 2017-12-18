@@ -1,25 +1,33 @@
-import {AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, OnDestroy, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {HistoryWindowComponent} from './history-window/history-window.component';
 
 const MEDIUM_WIDTH = 960;
+
+type Action = 'init' | 'remove';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements AfterViewInit, OnDestroy {
   @ViewChild('sidenav') sider: any;
   @ViewChild('navButton') navButton: any;
   @ViewChild('historyButton') historyButton: any;
 
   constructor(private cdRef: ChangeDetectorRef, private dialog: MatDialog) {}
 
+  ngAfterViewInit() {
+    this.screenWatcher();
+    this.resizeListener('init');
+    this.cdRef.detectChanges();
+  }
+
   openHistoryWindow(): void {
     const dialogRef = this.dialog.open(HistoryWindowComponent, {
       width: '',
-      data: { }
+      data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -27,18 +35,19 @@ export class AppComponent implements AfterViewInit {
     });
   }
 
-  ngAfterViewInit() {
-    this.screenWatcher();
-    this.initResizeListener();
-    this.cdRef.detectChanges();
-  }
-
-  initResizeListener() {
+  resizeListener(action: Action) {
     const eventHandler = _ => {
       this.screenWatcher();
     };
 
-    window.addEventListener('resize', eventHandler, false);
+    switch (action) {
+      case 'init':
+        window.addEventListener('resize', eventHandler, false);
+        break;
+      case 'remove':
+        window.removeEventListener('resize', eventHandler);
+        break;
+    }
   }
 
   screenWatcher() {
@@ -52,6 +61,10 @@ export class AppComponent implements AfterViewInit {
       this.navButton.opened = false;
     }
     console.log(window.innerWidth);
+  }
+
+  ngOnDestroy() {
+    this.resizeListener('remove');
   }
 }
 
