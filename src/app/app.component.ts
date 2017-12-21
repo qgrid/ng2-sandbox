@@ -4,7 +4,7 @@ import {HistoryWindowComponent} from './history-window/history-window.component'
 
 const MEDIUM_WIDTH = 960;
 
-type Action = 'init' | 'remove';
+type Action = 'init' | 'destroy';
 
 @Component({
   selector: 'app-root',
@@ -16,23 +16,13 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   @ViewChild('navButton') navButton: any;
   @ViewChild('historyButton') historyButton: any;
 
-  constructor(private cdRef: ChangeDetectorRef, private dialog: MatDialog) {}
+  constructor(private cdRef: ChangeDetectorRef, private dialog: MatDialog) {
+  }
 
   ngAfterViewInit() {
     this.screenWatcher();
     this.resizeListener('init');
     this.cdRef.detectChanges();
-  }
-
-  openHistoryWindow(): void {
-    const dialogRef = this.dialog.open(HistoryWindowComponent, {
-      width: '',
-      data: {}
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The history-window was closed');
-    });
   }
 
   resizeListener(action: Action) {
@@ -44,7 +34,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
       case 'init':
         window.addEventListener('resize', eventHandler, false);
         break;
-      case 'remove':
+      case 'destroy':
         window.removeEventListener('resize', eventHandler);
         break;
     }
@@ -63,8 +53,19 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     console.log(window.innerWidth);
   }
 
+  openHistoryWindow(): void {
+    const dialogRef = this.dialog.open(HistoryWindowComponent, {
+      width: '',
+      data: {}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The history-window was closed');
+    });
+  }
+
   ngOnDestroy() {
-    this.resizeListener('remove');
+    this.resizeListener('destroy');
   }
 }
 

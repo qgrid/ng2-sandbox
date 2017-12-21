@@ -113,6 +113,9 @@ a, a:visited {
 .mat-menu-panel {
   width: 19vh !important; }
 
+.property-list-table .mat-input-wrapper {
+  width: 8vh; }
+
 .flex-row {
   display: flex !important;
   flex-direction: row; }
