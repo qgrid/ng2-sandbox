@@ -28,7 +28,7 @@ import { ModelPropertyListComponent } from './model-property-list/model-property
 import { PropertyListComponent } from './property-list/property-list.component';
 import { HistoryWindowComponent } from './history-window/history-window.component';
 
-import { GridModule } from '../../grid_bundle';
+import { GridModule } from 'ng2-qgrid';
 import { QGridModule } from './q-grid/grid.module';
 
 import { ModelNamePipe } from './pipes/model-name.pipe';
