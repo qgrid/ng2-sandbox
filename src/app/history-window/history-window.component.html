@@ -1,0 +1,60 @@
+<div class="dialog flex-column">
+  <h1 mat-dialog-title>Save/Load</h1>
+
+  <div mat-dialog-content class="dialog-persistence">
+    <div class="dialog-persistence-title">
+      <mat-form-field class="dialog-persistence-title-mat-form">
+        <input matInput placeholder="Save as...">
+      </mat-form-field>
+    </div>
+    <div>
+      <button mat-button tabindex="2" class="dialog-persistence-button mat-primary">
+        <mat-icon>check</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="dialog-list">
+    <mat-selection-list>
+      <mat-list-option>
+        <div class="dialog-list-input">
+          <div class="dialog-list-input-text">
+            Hello World 8900-7789900
+          </div>
+          <button mat-icon-button class="dialog-list-input-button" [mat-menu-trigger-for]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>start</mat-icon>
+              Default
+            </button>
+            <button mat-menu-item>
+              <mat-icon>mode_edit</mat-icon>
+              Edit
+            </button>
+            <button mat-menu-item>
+              <mat-icon>close</mat-icon>
+              Remove
+            </button>
+          </mat-menu>
+        </div>
+      </mat-list-option>
+    </mat-selection-list>
+    <!--<mat-radio-group>-->
+      <!--<div class="dialog-radio-list-item">-->
+        <!--<mat-radio-button value="1">Option 1</mat-radio-button>-->
+        <!--<button mat-button tabindex="2" class="dialog-radio-list-button mat-primary">-->
+          <!--<mat-icon>more_vert</mat-icon>-->
+        <!--</button>-->
+      <!--</div>-->
+      <!--<div class="dialog-radio-list-item">-->
+        <!--<mat-radio-button value="2">Option 2</mat-radio-button>-->
+        <!--<button mat-button tabindex="2" class="dialog-radio-list-button mat-primary">-->
+          <!--<mat-icon>more_vert</mat-icon>-->
+        <!--</button>-->
+      <!--</div>-->
+    <!--</mat-radio-group>-->
+  </div>
+
+</div>

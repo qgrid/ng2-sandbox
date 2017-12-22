@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {GridModel, GridService} from '../../../grid_bundle';
+import {GridModel, GridService} from 'ng2-qgrid';
 
 @Component({
   selector: 'sb-model-list',
@@ -37,7 +37,7 @@ export class ModelListComponent {
 
           return modelAccessor();
         }
-      }
+      };
     });
   }
 }

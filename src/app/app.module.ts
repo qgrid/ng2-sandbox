@@ -15,18 +15,26 @@ import {
   MatInputModule,
   MatFormFieldModule,
   MatChipsModule,
-  MatListModule
+  MatListModule,
+  MatDialogModule,
+  MatRadioModule,
+  MatMenuModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { GridModule } from '../../grid_bundle';
-import { DataService } from './data/data.service';
-import { QGridModule } from './q-grid/grid.module';
 import { ModelListComponent } from './model-list/model-list.component';
 import { ModelPanelComponent } from './model-panel/model-panel.component';
-import { ModelNamePipe } from './pipes/model-name.pipe';
 import { ModelPropertyListComponent } from './model-property-list/model-property-list.component';
 import { PropertyListComponent } from './property-list/property-list.component';
+import { HistoryWindowComponent } from './history-window/history-window.component';
+
+import { GridModule } from 'ng2-qgrid';
+import { QGridModule } from './q-grid/grid.module';
+
+import { ModelNamePipe } from './pipes/model-name.pipe';
+
+import { DataService } from './services/data.service';
+import { HistoryService } from './services/history.service';
 
 @NgModule({
   declarations: [
@@ -35,8 +43,10 @@ import { PropertyListComponent } from './property-list/property-list.component';
     ModelPanelComponent,
     ModelNamePipe,
     ModelPropertyListComponent,
-    PropertyListComponent
+    PropertyListComponent,
+    HistoryWindowComponent
   ],
+  entryComponents: [HistoryWindowComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -56,9 +66,12 @@ import { PropertyListComponent } from './property-list/property-list.component';
     MatCheckboxModule,
     MatFormFieldModule,
     MatChipsModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatRadioModule,
+    MatMenuModule
   ],
-  providers: [DataService],
+  providers: [DataService, HistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 
 import { QGridComponent } from './grid.component';
-import { GridModule } from '../../../grid_bundle';
+import { GridModule } from 'ng2-qgrid';
 
 @NgModule({
   imports: [

@@ -1,5 +1,6 @@
 $color-white: #fafafa;
 $color-blue: #2F80ED;
+$color-darkblue: #2a73d5;
 $color-lightgrey: #ddd;
 $color-darkgrey: #C8C8C8;
 $color-black: #000;
@@ -14,7 +15,7 @@ $color-black: #000;
 
 html {
   height: 100%;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 body {
@@ -31,32 +32,59 @@ a, a:visited {
 }
 
 //Left Navbar
-
 .side-nav {
-  overflow-x: hidden;
-  &::-webkit-scrollbar {
-    width: 8px;
-    background-color: $color-lightgrey;
-  }
 
-  &::-webkit-scrollbar-track {
-    background-color: $color-lightgrey;
-  }
+  overflow-y: hidden !important;
 
-  &::-webkit-scrollbar-thumb {
-    background-color: $color-darkgrey;
-  }
+  &-head {
+    background-color: $color-blue;
+    height: 5vh;
+    flex: 28;
 
-  &-box {
-    width: 21vh;
-    height: 100vh;
+    &-button {
+      top: 7px;
+      left: 8vh;
+      //margin-left: 1.4vh !important;
 
-    &-content {
-      background-color: $color-blue;
+      &-icon {
+        color: $color-white;
+      }
     }
   }
 
+  &-patch {
+    flex: 1;
+    background-color: $color-lightgrey;
+  }
+
+  &-body {
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: $color-lightgrey;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $color-lightgrey;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-darkgrey;
+    }
+
+    &-box {
+      width: 21vh;
+      height: 100vh;
+
+      &-content {
+        background-color: $color-blue;
+      }
+    }
+
+  }
 }
+
+
 
 //Top Toolbar
 
@@ -81,6 +109,39 @@ a, a:visited {
   }
 
 }
+
+// Dialog modal window
+
+.dialog {
+  align-items: center;
+
+  &-persistence {
+    display: flex !important;
+    width: 35vh;
+
+    &-title {
+      margin-right: 5px;
+      flex: 5;
+      text-align: center;
+
+      &-mat-form {
+        width: 26vh;
+      }
+    }
+
+    &-button {
+      top: 12px;
+      flex: 1;
+    }
+  }
+
+  &-list {
+    position: relative;
+    width: 35vh;
+  }
+}
+
+
 
 //q-Grid section
 
@@ -108,9 +169,47 @@ a, a:visited {
   font-size: 9px;
 }
 
+.mat-button {
+  min-width: 0 !important;
+}
+
 .mat-chip:not(.mat-basic-chip) {
   border-radius: 0px;
 }
+
+.mat-dialog-container {
+  position: absolute;
+  width: 40vh !important;
+  height: 40vh !important;
+  top:50%;
+  left:50%;
+  margin: -234px 0 0 -196px;
+}
+
+.dialog-list .mat-pseudo-checkbox {
+  display: none;
+}
+
+.mat-menu-panel {
+  width: 19vh !important;
+}
+
+.property-list-table .mat-input-wrapper {
+  width: 8vh;
+}
+
+//Helpers
+
+.flex-row {
+  display: flex !important;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex !important;
+  flex-direction: column;
+}
+
 
 
 
