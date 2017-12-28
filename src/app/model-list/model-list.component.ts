@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {GridModel, GridService} from 'ng2-qgrid';
+import {GridModel, GridService, Grid} from 'ng2-qgrid';
 
 @Component({
   selector: 'sb-model-list',
@@ -9,9 +9,9 @@ import {GridModel, GridService} from 'ng2-qgrid';
 export class ModelListComponent {
   public gridModel: GridModel;
   public models: any[] = [];
-  public service: any;
+  public service: GridService;
 
-  constructor(grid: GridService) {
+  constructor(grid: Grid) {
     this.gridModel = grid.model();
     this.service = grid.service(this.gridModel);
     this.fillModels();

@@ -1,11 +1,11 @@
 import {Injectable, OnInit} from '@angular/core';
-import {GridModel, GridService} from 'ng2-qgrid';
+import {GridModel, Grid} from 'ng2-qgrid';
 
 @Injectable()
 export class HistoryService implements OnInit {
   public gridModel: GridModel;
 
-  constructor(gridService: GridService) {
+  constructor(gridService: Grid) {
     this.gridModel = gridService.model();
   }
 

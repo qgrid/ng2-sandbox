@@ -16,6 +16,8 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   @ViewChild('navButton') navButton: any;
   @ViewChild('historyButton') historyButton: any;
 
+  //const mql: MediaQueryList = window.matchMedia('(min-width: 600px)');
+
   constructor(private cdRef: ChangeDetectorRef, private dialog: MatDialog) {
   }
 
