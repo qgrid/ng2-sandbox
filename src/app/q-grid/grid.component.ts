@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {GridModel, GridService} from 'ng2-qgrid';
+import {GridModel, Grid} from 'ng2-qgrid';
 import { DataService, Human } from '../services/data.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { DataService, Human } from '../services/data.service';
 export class QGridComponent implements OnInit {
   public gridModel: GridModel;
 
-  constructor(gridService: GridService, private dataService: DataService) {
+  constructor(gridService: Grid, private dataService: DataService) {
     this.gridModel = gridService.model();
   }
 

@@ -29,6 +29,7 @@ import { PropertyListComponent } from './property-list/property-list.component';
 import { HistoryWindowComponent } from './history-window/history-window.component';
 
 import { GridModule } from 'ng2-qgrid';
+import { ThemeModule } from 'ng2-qgrid/theme/material';
 import { QGridModule } from './q-grid/grid.module';
 
 import { ModelNamePipe } from './pipes/model-name.pipe';
@@ -56,6 +57,7 @@ import { HistoryService } from './services/history.service';
     HttpClientModule,
     BrowserAnimationsModule,
     QGridModule,
+    ThemeModule,
     MatInputModule,
     MatCardModule,
     MatSidenavModule,
