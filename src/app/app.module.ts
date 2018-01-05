@@ -26,7 +26,7 @@ import { ModelListComponent } from './model-list/model-list.component';
 import { ModelPanelComponent } from './model-panel/model-panel.component';
 import { ModelPropertyListComponent } from './model-property-list/model-property-list.component';
 import { PropertyListComponent } from './property-list/property-list.component';
-import { HistoryWindowComponent } from './history-window/history-window.component';
+import { PersistenceWindowComponent } from './persistence-window/persistence-window.component';
 
 import { GridModule } from 'ng2-qgrid';
 import { ThemeModule } from 'ng2-qgrid/theme/material';
@@ -35,7 +35,8 @@ import { QGridModule } from './q-grid/grid.module';
 import { ModelNamePipe } from './pipes/model-name.pipe';
 
 import { DataService } from './services/data.service';
-import { HistoryService } from './services/history.service';
+import { PersistenceService } from './services/persistence.service';
+import { SettingsListComponent } from './persistence-window/settings-list/settings-list.component';
 
 @NgModule({
   declarations: [
@@ -45,9 +46,10 @@ import { HistoryService } from './services/history.service';
     ModelNamePipe,
     ModelPropertyListComponent,
     PropertyListComponent,
-    HistoryWindowComponent
+    PersistenceWindowComponent,
+    SettingsListComponent
   ],
-  entryComponents: [HistoryWindowComponent],
+  entryComponents: [PersistenceWindowComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -73,7 +75,7 @@ import { HistoryService } from './services/history.service';
     MatRadioModule,
     MatMenuModule
   ],
-  providers: [DataService, HistoryService],
+  providers: [DataService, PersistenceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
