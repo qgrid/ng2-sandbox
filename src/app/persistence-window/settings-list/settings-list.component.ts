@@ -7,27 +7,25 @@ import {PersistenceService} from '../../services/persistence.service';
   styleUrls: ['./settings-list.component.css']
 })
 export class SettingsListComponent implements OnInit, AfterContentInit {
-  @Input() instance: any;
-
-  name: any;
-  timeCreated: any;
+  @Input() key: any;
+  @Input() value: string;
+  @Input() modified;
 
   constructor(private persistenceService: PersistenceService) {
   }
 
   ngAfterContentInit() {
-    console.log('start');
-    this.parse();
+
   }
 
-  parse() {
-    let temp = JSON.parse(this.instance);
-    this.name = temp[0].title;
-    this.timeCreated = temp[0].modified;
-    console.log(temp);
-  }
+  // parse() {
+  //   let temp = JSON.parse(this.instance);
+  //   this.name = temp[0].title;
+  //   this.timeCreated = temp[0].modified;
+  //   console.log(temp);
+  // }
 
   ngOnInit() {
-    console.log(this.instance);
+
   }
 }

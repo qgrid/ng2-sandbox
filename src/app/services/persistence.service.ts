@@ -33,7 +33,7 @@ export class PersistenceService implements OnInit {
     return model;
   }
 
-  load(model, settings) {
+  load(model, settings?) {
     const gridModel = this.model;
     settings = settings || gridModel.persistence().settings;
 
@@ -45,9 +45,5 @@ export class PersistenceService implements OnInit {
 
     return model;
   }
-
-  // checkForRemovedItem(key) {
-  //   return this.gridModel.persistence().storage.getItem(key) != null;
-  // }
 
 }
