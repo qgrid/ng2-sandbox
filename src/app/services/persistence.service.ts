@@ -5,17 +5,15 @@ import {clone} from 'lodash';
 @Injectable()
 export class PersistenceService implements OnInit {
   public model: GridModel;
-  public localStorage;
 
   constructor(gridService: Grid) {
     this.model = gridService.model();
-    this.localStorage = this.model.persistence().storage.storage;
   }
 
   ngOnInit() {
   }
 
-  save(settings) {
+  save(settings?) {
     const gridModel = this.model;
     settings = settings || gridModel.persistence().settings;
 

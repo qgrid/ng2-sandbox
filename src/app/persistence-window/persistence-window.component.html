@@ -17,7 +17,7 @@
   <div *ngFor="let set of settings" class="dialog-list">
     <sb-settings-list
       [key]="set.title"
-      [value]="set.value"
+      [model]="set.model"
       [modified]="set.modified"
     >
     </sb-settings-list>
