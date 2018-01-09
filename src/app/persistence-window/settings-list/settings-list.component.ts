@@ -19,6 +19,8 @@ export class SettingsListComponent implements AfterViewInit {
   componentExist = true;
 
   @ViewChild('content', {read: ElementRef}) buttonContent: ElementRef;
+  @ViewChild('default', {read: ElementRef}) buttonDefault: ElementRef;
+  @ViewChild('edit', {read: ElementRef}) buttonEdit: ElementRef;
   @ViewChild('remove', {read: ElementRef}) buttonRemove: ElementRef;
 
   constructor(private persistenceService: PersistenceService,
@@ -27,15 +29,27 @@ export class SettingsListComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    const buttonRemove = this.buttonRemove.nativeElement;
     const buttonContent = this.buttonContent.nativeElement;
+    const buttonDefault = this.buttonDefault.nativeElement;
+    const buttonEdit = this.buttonEdit.nativeElement;
+    const buttonRemove = this.buttonRemove.nativeElement;
 
     this.renderer.listen(buttonContent, 'click', () => this.loadModel());
+    this.renderer.listen(buttonDefault, 'click', () => this.asDefault());
+    this.renderer.listen(buttonEdit, 'click', () => this.edit());
     this.renderer.listen(buttonRemove, 'click', () => this.remove());
   }
 
   loadModel() {
     this.persistenceService.load(this.model);
+  }
+
+  asDefault() {
+    console.log('in progress');
+  }
+
+  edit() {
+    console.log('in progress');
   }
 
   remove() {
