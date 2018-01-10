@@ -1,6 +1,5 @@
 import {
-  AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, Renderer2,
-  ViewChild
+  AfterViewInit, Component, ElementRef, Input, Renderer2, ViewChild
 } from '@angular/core';
 
 import {Grid} from 'ng2-qgrid';
@@ -12,48 +11,35 @@ import {PersistenceService} from '../../services/persistence.service';
   styleUrls: ['./settings-list.component.css']
 })
 export class SettingsListComponent implements AfterViewInit {
+
+  @ViewChild('content', {read: ElementRef}) buttonContent: ElementRef;
+
   @Input() key: string;
   @Input() model: string;
   @Input() modified: string;
 
   componentExist = true;
-
-  @ViewChild('content', {read: ElementRef}) buttonContent: ElementRef;
-  @ViewChild('default', {read: ElementRef}) buttonDefault: ElementRef;
-  @ViewChild('edit', {read: ElementRef}) buttonEdit: ElementRef;
-  @ViewChild('remove', {read: ElementRef}) buttonRemove: ElementRef;
+  allowEditing = false;
 
   constructor(private persistenceService: PersistenceService,
               private renderer: Renderer2,
-              private grid: Grid) {
-  }
+              private grid: Grid) {}
 
   ngAfterViewInit() {
     const buttonContent = this.buttonContent.nativeElement;
-    const buttonDefault = this.buttonDefault.nativeElement;
-    const buttonEdit = this.buttonEdit.nativeElement;
-    const buttonRemove = this.buttonRemove.nativeElement;
 
     this.renderer.listen(buttonContent, 'click', () => this.loadModel());
-    this.renderer.listen(buttonDefault, 'click', () => this.asDefault());
-    this.renderer.listen(buttonEdit, 'click', () => this.edit());
-    this.renderer.listen(buttonRemove, 'click', () => this.remove());
   }
 
   loadModel() {
     this.persistenceService.load(this.model);
   }
 
-  asDefault() {
-    console.log('in progress');
-  }
-
-  edit() {
-    console.log('in progress');
-  }
-
-  remove() {
-    localStorage.removeItem(this.key);
+  removeComponent() {
     this.componentExist = false;
+  }
+
+  canEdit(event) {
+    this.allowEditing = event;
   }
 }

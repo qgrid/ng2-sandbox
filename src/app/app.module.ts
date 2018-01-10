@@ -37,6 +37,8 @@ import { ModelNamePipe } from './pipes/model-name.pipe';
 import { DataService } from './services/data.service';
 import { PersistenceService } from './services/persistence.service';
 import { SettingsListComponent } from './persistence-window/settings-list/settings-list.component';
+import { ButtonsMenuComponent } from './persistence-window/settings-list/buttons-menu/buttons-menu.component';
+import { InputEditingComponent } from './persistence-window/settings-list/input-editing/input-editing.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { SettingsListComponent } from './persistence-window/settings-list/settin
     ModelPropertyListComponent,
     PropertyListComponent,
     PersistenceWindowComponent,
-    SettingsListComponent
+    SettingsListComponent,
+    ButtonsMenuComponent,
+    InputEditingComponent
   ],
   entryComponents: [PersistenceWindowComponent],
   imports: [

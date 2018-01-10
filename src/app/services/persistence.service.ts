@@ -44,4 +44,11 @@ export class PersistenceService implements OnInit {
     return model;
   }
 
+  editStorageItem(newKey, oldKey) {
+    const oldValue = localStorage.getItem(oldKey);
+
+    localStorage.setItem(newKey, oldValue);
+    localStorage.removeItem(oldKey);
+  }
+
 }
