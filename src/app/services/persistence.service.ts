@@ -13,6 +13,12 @@ export class PersistenceService implements OnInit {
   ngOnInit() {
   }
 
+  // get settings() {
+  //   return {
+  //
+  //   }
+  // }
+
   save(settings?) {
     const gridModel = this.model;
     settings = settings || gridModel.persistence().settings;

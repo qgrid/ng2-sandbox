@@ -1,12 +1,10 @@
 import {
-  AfterViewInit, ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnChanges, Output, Renderer2,
+  AfterViewInit, Component, ElementRef, EventEmitter, Input, OnChanges, Output, Renderer2,
   SimpleChanges,
   ViewChild
 } from '@angular/core';
 
 import {PersistenceService} from '../../../services/persistence.service';
-
-const ENTER = 13;
 
 @Component({
   selector: 'sb-input-editing',
@@ -14,29 +12,30 @@ const ENTER = 13;
   styleUrls: ['./input-editing.component.css']
 })
 export class InputEditingComponent implements AfterViewInit, OnChanges {
-
   @Input() key: string;
 
   @Output() inFocus: EventEmitter<boolean> = new EventEmitter();
+  @Output() triggerInputChanges: EventEmitter<string> = new EventEmitter();
 
   @ViewChild('input', {read: ElementRef}) input: ElementRef;
 
   constructor(private renderer: Renderer2,
-              private cdRef: ChangeDetectorRef,
-              private persistenceService: PersistenceService) {}
+              private persistenceService: PersistenceService) {
+  }
 
   ngAfterViewInit() {
     const input = this.input.nativeElement;
 
-    //this.cdRef.markForCheck();
-    this.renderer.listen(input, 'blur', () => this.focus());
-    this.renderer.listen(input, 'keyup', () => this.keyPress(event));
+    this.renderer.listen(input, 'blur', () => this.onBlur());
   }
+
 
   ngOnChanges(changes: SimpleChanges) {
     const key = changes['key'];
 
     if (!key.firstChange) {
+      debugger;
+
       const currentValue = key.currentValue;
       const previousValue = key.previousValue;
 
@@ -46,18 +45,11 @@ export class InputEditingComponent implements AfterViewInit, OnChanges {
     }
   }
 
-  keyPress(event) {
-    event.preventDefault();
-
-    if (event.keyCode === ENTER) {
-      debugger;
-      this.key = this.input.nativeElement.value;
-    }
+  onBlur() {
+    this.triggerInputChanges.emit(this.key);
+    setTimeout(() => {
+      this.inFocus.emit(false);
+    }, 0);
   }
-
-  focus() {
-
-    this.inFocus.emit(false);
-  }
-
 }
+

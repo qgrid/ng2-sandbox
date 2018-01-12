@@ -11,6 +11,7 @@ import {
 export class ButtonsMenuComponent implements AfterViewInit {
 
   @Input() key: string;
+
   @Output() removeComponent: EventEmitter<void> = new EventEmitter();
   @Output() canEdit: EventEmitter<boolean> = new EventEmitter();
 
@@ -36,13 +37,6 @@ export class ButtonsMenuComponent implements AfterViewInit {
 
   edit() {
     this.canEdit.emit(true);
-    // this.canEdit = true;
-    //
-    // const input = document.querySelector('#input');
-    // debugger;
-    // this.renderer.listen(input, 'onblur', () => this.outOfFocus());
-
-    console.log('in progress');
   }
 
   remove() {

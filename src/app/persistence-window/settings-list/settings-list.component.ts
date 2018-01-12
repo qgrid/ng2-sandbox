@@ -42,4 +42,8 @@ export class SettingsListComponent implements AfterViewInit {
   canEdit(event) {
     this.allowEditing = event;
   }
+
+  handleKey(key) {
+    this.key = key;
+  }
 }
