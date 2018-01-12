@@ -1,4 +1,4 @@
-import {Component, Inject, ViewChild, ElementRef, AfterContentInit, ChangeDetectorRef} from '@angular/core';
+import {Component, ViewChild, ElementRef, AfterContentInit, ChangeDetectorRef} from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {PersistenceService} from '../services/persistence.service';
 import {GridModel, Grid} from 'ng2-qgrid';
@@ -15,7 +15,6 @@ export class PersistenceWindowComponent implements AfterContentInit {
   settings: any[] = [];
 
   constructor(private persistenceService: PersistenceService,
-              private cdRef: ChangeDetectorRef,
               gridService: Grid) {
     this.model = gridService.model();
   }
@@ -53,7 +52,7 @@ export class PersistenceWindowComponent implements AfterContentInit {
       .storage
       .setItem(value, set);
 
-    this.cdRef.detectChanges();
+    this.clearInputField();
   }
 
   isValidForm(value) {
