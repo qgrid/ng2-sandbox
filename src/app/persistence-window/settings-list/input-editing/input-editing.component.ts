@@ -34,7 +34,6 @@ export class InputEditingComponent implements AfterViewInit, OnChanges {
     const key = changes['key'];
 
     if (!key.firstChange) {
-      debugger;
 
       const currentValue = key.currentValue;
       const previousValue = key.previousValue;

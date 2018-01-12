@@ -13,11 +13,14 @@ export class PersistenceService implements OnInit {
   ngOnInit() {
   }
 
-  // get settings() {
-  //   return {
-  //
-  //   }
-  // }
+  getSettings(value) {
+    return {
+      title: value,
+      modified: this.getDate(),
+      model: this.save(),
+      isDefault: false
+    };
+  }
 
   save(settings?) {
     const gridModel = this.model;
@@ -52,9 +55,41 @@ export class PersistenceService implements OnInit {
 
   editStorageItem(newKey, oldKey) {
     const oldValue = localStorage.getItem(oldKey);
+    const tempValue = JSON.parse(oldValue);
 
-    localStorage.setItem(newKey, oldValue);
+    tempValue['title'] = newKey;
+    tempValue['modified'] = this.getDate();
+
+    const resultedValue = JSON.stringify(tempValue);
+    localStorage.setItem(newKey, resultedValue);
     localStorage.removeItem(oldKey);
+  }
+
+  getDate() {
+    let today: Date | string = new Date();
+    let day: number | string = today.getDate();
+    let month: number | string = today.getMonth() + 1;
+    let minutes: number | string = today.getMinutes();
+
+    const hours = today.getHours();
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    const year = today.getFullYear();
+
+    if (day < 10) {
+      day = '0' + day;
+    }
+
+    if (month < 10) {
+      month = '0' + month;
+    }
+
+    if (minutes < 10) {
+      minutes = '0' + minutes;
+    }
+
+    today = month + '/' + day + '/' + year + ' ' + hours + ':' + minutes + ampm;
+
+    return today;
   }
 
 }

@@ -15,6 +15,7 @@ export class PersistenceWindowComponent implements AfterContentInit {
   settings: any[] = [];
 
   constructor(private persistenceService: PersistenceService,
+              private cdRef: ChangeDetectorRef,
               gridService: Grid) {
     this.model = gridService.model();
   }
@@ -44,12 +45,7 @@ export class PersistenceWindowComponent implements AfterContentInit {
 
   save(value) {
 
-    const set = {
-      title: value,
-      modified: this.getDate(),
-      model: this.persistenceService.save(),
-      isDefault: false
-    };
+    const set = this.persistenceService.getSettings(value);
 
     this.settings.push(set);
 
@@ -57,7 +53,7 @@ export class PersistenceWindowComponent implements AfterContentInit {
       .storage
       .setItem(value, set);
 
-    this.clearInputField();
+    this.cdRef.detectChanges();
   }
 
   isValidForm(value) {
@@ -76,32 +72,5 @@ export class PersistenceWindowComponent implements AfterContentInit {
 
   clearInputField() {
     this.input.nativeElement.value = '';
-  }
-
-  getDate() {
-    let today: Date | string = new Date();
-    let day: number | string = today.getDate();
-    let month: number | string = today.getMonth() + 1;
-    let minutes: number | string = today.getMinutes();
-
-    const hours = today.getHours();
-    const ampm = hours >= 12 ? 'pm' : 'am';
-    const year = today.getFullYear();
-
-    if (day < 10) {
-      day = '0' + day;
-    }
-
-    if (month < 10) {
-      month = '0' + month;
-    }
-
-    if (minutes < 10) {
-      minutes = '0' + minutes;
-    }
-
-    today = month + '/' + day + '/' + year + ' ' + hours + ':' + minutes + ampm;
-
-    return today;
   }
 }
