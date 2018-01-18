@@ -4,6 +4,7 @@ import {
 
 import {Grid} from 'ng2-qgrid';
 import {PersistenceService} from '../../services/persistence.service';
+import {Helper} from '../../services/helpers';
 
 @Component({
   selector: 'sb-settings-list',
@@ -32,7 +33,9 @@ export class SettingsListComponent implements AfterViewInit {
   }
 
   loadModel() {
-    this.persistenceService.load(this.model);
+    debugger;
+    const settings = Helper.settings();
+    this.persistenceService.load(this.model, settings);
   }
 
   removeComponent() {

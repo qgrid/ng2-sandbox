@@ -1,25 +1,41 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable, OnDestroy, OnInit} from '@angular/core';
 import {GridModel, Grid} from 'ng2-qgrid';
 import {clone} from 'lodash';
+import {Settings} from './settings.model';
+import {Observable} from 'rxjs/Observable';
+import {Helper} from './helpers';
+import {Subject} from 'rxjs/Subject';
+import {Subscription} from 'rxjs/Subscription';
+import 'rxjs/add/observable/of';
 
 @Injectable()
-export class PersistenceService implements OnInit {
+export class PersistenceService implements OnInit, OnDestroy {
   public model: GridModel;
+
+  public storage$: Subject<Settings> = new Subject<Settings>();
+  public settings$: Observable<Settings> = this.storage$.asObservable();
+  public subscription: Subscription;
+
+  public notificator: Subject<Settings> = new Subject<Settings>();
 
   constructor(gridService: Grid) {
     this.model = gridService.model();
+    this.subscription = this.storage$.subscribe(value => this.saveInLocalStorage(value));
   }
 
   ngOnInit() {
+
   }
 
-  getSettings(value) {
-    return {
+  saveSettings(value) {
+    const modelState = Helper.settings();
+
+    const settings = new Settings({
       title: value,
-      modified: this.getDate(),
-      model: this.save(),
-      isDefault: false
-    };
+      model: this.save(modelState)
+    });
+
+    this.storage$.next(settings);
   }
 
   save(settings?) {
@@ -58,38 +74,41 @@ export class PersistenceService implements OnInit {
     const tempValue = JSON.parse(oldValue);
 
     tempValue['title'] = newKey;
-    tempValue['modified'] = this.getDate();
+    tempValue['modified'] = Helper.getDate();
 
     const resultedValue = JSON.stringify(tempValue);
+
     localStorage.setItem(newKey, resultedValue);
     localStorage.removeItem(oldKey);
+    this.notificator.next();
   }
 
-  getDate() {
-    let today: Date | string = new Date();
-    let day: number | string = today.getDate();
-    let month: number | string = today.getMonth() + 1;
-    let minutes: number | string = today.getMinutes();
+  loadDataFromStorage(): Observable<any[]> {
+    const values = [];
 
-    const hours = today.getHours();
-    const ampm = hours >= 12 ? 'pm' : 'am';
-    const year = today.getFullYear();
+    if (localStorage.length) {
+      const keys = Object.keys(localStorage);
 
-    if (day < 10) {
-      day = '0' + day;
+      for (let i = 0, max = keys.length; i < max; i++) {
+        const key = keys[i];
+        const item = localStorage.getItem(key);
+        const parsed = JSON.parse(item);
+
+        values.push(parsed);
+      }
+
     }
 
-    if (month < 10) {
-      month = '0' + month;
-    }
-
-    if (minutes < 10) {
-      minutes = '0' + minutes;
-    }
-
-    today = month + '/' + day + '/' + year + ' ' + hours + ':' + minutes + ampm;
-
-    return today;
+    return Observable.of(values);
   }
 
+  saveInLocalStorage(value) {
+    const stringified = JSON.stringify(value);
+
+    localStorage.setItem(value.title, stringified);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

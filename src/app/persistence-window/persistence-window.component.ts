@@ -1,75 +1,63 @@
-import {Component, ViewChild, ElementRef, AfterContentInit, ChangeDetectorRef} from '@angular/core';
+import {
+  Component, ViewChild, ElementRef, AfterContentInit, ChangeDetectorRef, QueryList,
+  OnDestroy
+} from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {PersistenceService} from '../services/persistence.service';
 import {GridModel, Grid} from 'ng2-qgrid';
+import {Settings} from '../services/settings.model';
+import {Observable} from 'rxjs/Observable';
+import {Subscription} from 'rxjs/Subscription';
+import {Helper} from '../services/helpers';
+import 'rxjs/add/operator/filter';
 
 @Component({
   selector: 'sb-persistence-window',
   templateUrl: './persistence-window.component.html',
   styleUrls: ['./persistence-window.component.css']
 })
-export class PersistenceWindowComponent implements AfterContentInit {
+export class PersistenceWindowComponent implements AfterContentInit, OnDestroy {
   @ViewChild('input') input: ElementRef;
 
   model: GridModel;
-  settings: any[] = [];
+  settings: Settings[] = [];
+  subscription: Subscription;
 
-  constructor(private persistenceService: PersistenceService,
-              gridService: Grid) {
+  constructor(
+    private persistenceService: PersistenceService,
+    public gridService: Grid,
+    private cdRef: ChangeDetectorRef) {
+
     this.model = gridService.model();
+    this.subscription = this.persistenceService.settings$
+      .subscribe((set: Settings) => this.settings.push(set));
+
+    this.persistenceService.notificator.subscribe(() => this.initData());
   }
 
   ngAfterContentInit() {
-    this.settings = this.loadData();
+    this.initData();
   }
 
-  loadData() {
-    const values = [];
-
-    if (localStorage.length) {
-      const keys = Object.keys(localStorage);
-
-      for (let i = 0, max = keys.length; i < max; i++) {
-        const key = keys[i];
-        const item = localStorage.getItem(key);
-        const parsed = JSON.parse(item);
-
-        values.push(parsed);
-      }
-
-    }
-
-    return values;
+  initData() {
+    this.persistenceService.loadDataFromStorage().subscribe(value => this.settings = value);
   }
 
   save(value) {
-
-    const set = this.persistenceService.getSettings(value);
-
-    this.settings.push(set);
-
-    this.model.persistence()
-      .storage
-      .setItem(value, set);
+    this.persistenceService.saveSettings(value);
 
     this.clearInputField();
   }
 
   isValidForm(value) {
-    return this.stringNotEmpty(value) && this.uniqTitle(value);
-  }
-
-  stringNotEmpty(value) {
-    return !!value;
-  }
-
-  uniqTitle(value) {
-    const settings = this.settings;
-    const title = value.toLowerCase();
-    return !settings.some(set => set.title.toLowerCase() === title);
+    return Helper.isValidForm(value);
   }
 
   clearInputField() {
     this.input.nativeElement.value = '';
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
