@@ -1,4 +1,5 @@
 export class Helper {
+
   static getDate() {
     let today: Date | string = new Date();
     let day: number | string = today.getDate();
@@ -32,19 +33,17 @@ export class Helper {
     };
   }
 
-  static isValidForm(value) {
-    return this.stringNotEmpty(value) && this.uniqTitle(value);
+  static isValidForm(value, array) {
+    return this.stringNotEmpty(value) && this.uniqTitle(value, array);
   }
 
   static stringNotEmpty(value) {
     return !!value;
   }
 
-  static uniqTitle(value) {
-    return true;
-    // const settings = this.settings;
-    // const title = value.toLowerCase();
-    // return !settings.some(set => set.title.toLowerCase() === title);
+  static uniqTitle(value, array) {
+    const title = value.toLowerCase();
+    return !array.some(set => set.title.toLowerCase() === title);
   }
 
 }

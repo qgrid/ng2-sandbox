@@ -8,7 +8,7 @@
       </mat-form-field>
     </div>
     <div>
-      <button [disabled]="!isValidForm(input.value)" mat-button (click)="save(input.value)" class="dialog-persistence-button mat-primary">
+      <button [disabled]="!isValidForm(input.value, settings)" mat-button (click)="save(input.value)" class="dialog-persistence-button mat-primary">
         <mat-icon>check</mat-icon>
       </button>
     </div>

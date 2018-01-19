@@ -1,12 +1,13 @@
 import {
-  AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, Renderer2,
+  AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, EventEmitter, Input, Output, Renderer2,
   ViewChild
 } from '@angular/core';
 
 @Component({
   selector: 'sb-buttons-menu',
   templateUrl: './buttons-menu.component.html',
-  styleUrls: ['./buttons-menu.component.css']
+  styleUrls: ['./buttons-menu.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ButtonsMenuComponent implements AfterViewInit {
 

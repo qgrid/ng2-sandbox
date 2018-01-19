@@ -12,15 +12,15 @@ import 'rxjs/add/observable/of';
 export class PersistenceService implements OnInit, OnDestroy {
   public model: GridModel;
 
-  public storage$: Subject<Settings> = new Subject<Settings>();
-  public settings$: Observable<Settings> = this.storage$.asObservable();
-  public subscription: Subscription;
+  private subscriptionStor: Subscription;
 
-  public notificator: Subject<Settings> = new Subject<Settings>();
+  public storage$: Subject<Settings> = new Subject<Settings>();
+  public editing$: Subject<Settings> = new Subject<Settings>();
+  public settings$: Observable<Settings> = this.storage$.asObservable();
 
   constructor(gridService: Grid) {
     this.model = gridService.model();
-    this.subscription = this.storage$.subscribe(value => this.saveInLocalStorage(value));
+    this.subscriptionStor = this.storage$.subscribe(value => this.saveDataInStorage(value));
   }
 
   ngOnInit() {
@@ -80,7 +80,7 @@ export class PersistenceService implements OnInit, OnDestroy {
 
     localStorage.setItem(newKey, resultedValue);
     localStorage.removeItem(oldKey);
-    this.notificator.next();
+    this.editing$.next();
   }
 
   loadDataFromStorage(): Observable<any[]> {
@@ -102,13 +102,13 @@ export class PersistenceService implements OnInit, OnDestroy {
     return Observable.of(values);
   }
 
-  saveInLocalStorage(value) {
+  saveDataInStorage(value) {
     const stringified = JSON.stringify(value);
 
     localStorage.setItem(value.title, stringified);
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.subscriptionStor.unsubscribe();
   }
 }

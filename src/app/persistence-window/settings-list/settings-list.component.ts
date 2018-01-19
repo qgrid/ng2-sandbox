@@ -1,5 +1,5 @@
 import {
-  AfterViewInit, Component, ElementRef, Input, Renderer2, ViewChild
+  AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, Input, Renderer2, ViewChild
 } from '@angular/core';
 
 import {Grid} from 'ng2-qgrid';
@@ -9,7 +9,8 @@ import {Helper} from '../../services/helpers';
 @Component({
   selector: 'sb-settings-list',
   templateUrl: './settings-list.component.html',
-  styleUrls: ['./settings-list.component.css']
+  styleUrls: ['./settings-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SettingsListComponent implements AfterViewInit {
 
@@ -33,7 +34,6 @@ export class SettingsListComponent implements AfterViewInit {
   }
 
   loadModel() {
-    debugger;
     const settings = Helper.settings();
     this.persistenceService.load(this.model, settings);
   }
