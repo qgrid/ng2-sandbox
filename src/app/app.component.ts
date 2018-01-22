@@ -1,6 +1,6 @@
 import {AfterViewInit, ChangeDetectorRef, Component, OnDestroy, ViewChild} from '@angular/core';
 import {MatDialog} from '@angular/material';
-import {HistoryWindowComponent} from './history-window/history-window.component';
+import {PersistenceWindowComponent} from './persistence-window/persistence-window.component';
 
 const MEDIUM_WIDTH = 960;
 
@@ -56,13 +56,13 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   }
 
   openHistoryWindow(): void {
-    const dialogRef = this.dialog.open(HistoryWindowComponent, {
+    const dialogRef = this.dialog.open(PersistenceWindowComponent, {
       width: '',
       data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The history-window was closed');
+      console.log('The persistence-window was closed');
     });
   }
 

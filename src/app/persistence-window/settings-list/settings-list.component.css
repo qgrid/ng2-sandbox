@@ -3,13 +3,8 @@
   flex-direction: row;
 }
 
-.dialog-list-input-text {
-
-}
-
 .dialog-list-input-button {
   position: absolute;
   right: 1vh;
   top: 0.4vh;
 }
-

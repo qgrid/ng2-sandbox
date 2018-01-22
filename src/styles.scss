@@ -165,6 +165,31 @@ a, a:visited {
   color: rgba($color-white, 0.87);
 }
 
+.mat-dialog-container {
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: $color-lightgrey;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-lightgrey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-darkgrey;
+  }
+
+  &-box {
+    width: 21vh;
+    height: 100vh;
+
+    &-content {
+      background-color: $color-blue;
+    }
+  }
+}
+
 .mat-chip {
   font-size: 9px;
 }

@@ -1,0 +1,18 @@
+<button mat-icon-button class="dialog-list-input-button" [mat-menu-trigger-for]="menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item #default>
+    <mat-icon>start</mat-icon>
+    Default
+  </button>
+  <button mat-menu-item #edit>
+    <mat-icon>mode_edit</mat-icon>
+    Edit
+  </button>
+  <button mat-menu-item #remove>
+    <mat-icon>close</mat-icon>
+    Remove
+  </button>
+</mat-menu>

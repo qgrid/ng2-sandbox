@@ -1,0 +1,32 @@
+<div *ngIf="componentExist">
+  <mat-selection-list>
+    <mat-list-option>
+
+      <div class="dialog-list-input" [ngSwitch]="allowEditing">
+        <div #content *ngSwitchCase="false">
+          <div class="dialog-list-input-text">
+            {{key}}
+          </div>
+          <div>
+            {{modified}}
+          </div>
+        </div>
+
+        <div *ngSwitchCase="true">
+          <sb-input-editing
+            (triggerInputChanges)="handleKey($event)"
+            [key]="key"
+            (inFocus)="canEdit($event)"
+          ></sb-input-editing>
+        </div>
+
+        <sb-buttons-menu
+          [key]="key"
+          (removeComponent)="removeComponent()"
+          (canEdit)="canEdit($event)"
+        ></sb-buttons-menu>
+      </div>
+
+    </mat-list-option>
+  </mat-selection-list>
+</div>
